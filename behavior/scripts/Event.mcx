@@ -1,0 +1,6 @@
+<Event @after>
+  worldLoad = onWorldLoad
+</Event>
+<script lang="ts">
+export function onWorldLoad() { }
+</script>

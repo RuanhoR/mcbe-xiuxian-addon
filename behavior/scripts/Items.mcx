@@ -1,0 +1,73 @@
+<Component>
+  <items>
+    <item id="xian/raw-spirit_stone.json">RawSpiritStone</item>
+    <item id="xian/spirit_stone_level1.json">SpiritStoneLevel1</item>
+    <item id="xian/spirit_stone_level2.json">SpiritStoneLevel2</item>
+    <item id="xian/spirit_stone_level3.json">SpiritStoneLevel3</item>
+    <item id="xian/spirit_stone_level4.json">SpiritStoneLevel4</item>
+    <item id="xian/spirit_stone_level0.json">SpiritStoneLevel0</item>
+  </items>
+</Component>
+
+<script lang="ts">
+import { ItemComponent } from "@mbler/mcx-component";
+import { AddonItem } from "./config";
+// ===== Define SpiritStoneItem ==== 
+import RawSpiritStoneOreIcon from "./assets/raw_spirit_stone_ore.png"
+import SpiritStoneLevel0Icon from "./assets/spirit_stone_level0.png"
+import SpiritStoneLevel1Icon from "./assets/spirit_stone_level1.png"
+import SpiritStoneLevel2Icon from "./assets/spirit_stone_level2.png"
+import SpiritStoneLevel3Icon from "./assets/spirit_stone_level3.png"
+import SpiritStoneLevel4Icon from "./assets/spirit_stone_level4.png"
+const RawSpiritStone = new ItemComponent({
+  components: {},
+  format: "1.21.0",
+  id: AddonItem.RawSpiritStoneOre
+});
+RawSpiritStone.setMaxStackSize(64);
+RawSpiritStone.setIcon(RawSpiritStoneOreIcon);
+const SpiritStoneLevel0 = new ItemComponent({
+  components: {},
+  format: "1.21.0",
+  id: AddonItem.SpiritStoneLevel0
+});
+SpiritStoneLevel0.setMaxStackSize(64);
+SpiritStoneLevel0.setIcon(SpiritStoneLevel0Icon);
+const SpiritStoneLevel1 = new ItemComponent({
+  components: {},
+  format: "1.21.0",
+  id: AddonItem.SpiritStoneLevel1
+});
+SpiritStoneLevel1.setMaxStackSize(64);
+SpiritStoneLevel1.setIcon(SpiritStoneLevel1Icon);
+const SpiritStoneLevel2 = new ItemComponent({
+  components: {},
+  format: "1.21.0",
+  id: AddonItem.SpiritStoneLevel2
+});
+SpiritStoneLevel2.setMaxStackSize(64);
+SpiritStoneLevel2.setIcon(SpiritStoneLevel2Icon);
+const SpiritStoneLevel3 = new ItemComponent({
+  components: {},
+  format: "1.21.0",
+  id: AddonItem.SpiritStoneLevel3
+});
+SpiritStoneLevel3.setMaxStackSize(64);
+SpiritStoneLevel3.setIcon(SpiritStoneLevel3Icon);
+const SpiritStoneLevel4 = new ItemComponent({
+  components: {},
+  format: "1.21.0",
+  id: AddonItem.SpiritStoneLevel4
+});
+SpiritStoneLevel4.setMaxStackSize(64);
+SpiritStoneLevel4.setIcon(SpiritStoneLevel4Icon);
+// ==== Dan ==== 
+export {
+  RawSpiritStone,
+  SpiritStoneLevel0,
+  SpiritStoneLevel1,
+  SpiritStoneLevel2,
+  SpiritStoneLevel3,
+  SpiritStoneLevel4
+}
+</script>
