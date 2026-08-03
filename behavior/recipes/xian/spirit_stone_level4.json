@@ -1,0 +1,18 @@
+{
+  "format_version": "1.17",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "xian:spirit_stone_level_4"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [" # ", "# #", " # "],
+    "key": {
+      "#": {
+        "item": "xian:spirit_stone_level_3"
+      }
+    },
+    "result": {
+      "item": "xian:spirit_stone_level_4"
+    }
+  }
+}
