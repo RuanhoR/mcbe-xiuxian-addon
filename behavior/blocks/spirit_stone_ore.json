@@ -38,7 +38,7 @@
       },
 
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 10
+        "seconds_to_destroy": 6
       },
       "minecraft:tags": ["minecraft:is_pickaxe_item_destructible"]
     }

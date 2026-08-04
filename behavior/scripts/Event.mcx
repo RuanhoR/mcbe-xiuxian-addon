@@ -1,5 +1,6 @@
 <Event @after>
   itemUse = onItemUse
+  worldLoad = startLoop
   McxExtendsBy = ./EventBefore.mcx
 </Event>
 <script lang="ts">
@@ -8,11 +9,12 @@ import { AddonItem } from "./config";
 export function onItemUse(event: ItemUseAfterEvent) {
   if (event.itemStack.typeId == AddonItem.PuTuan) {
     event.source.dimension.spawnEntity("xian:putuan" as unknown as VanillaEntityIdentifier, event.source.location);
-    if (event.itemStack.amount < 1) {
+    if (event.source.getGameMode() !== "Creative") if (event.itemStack.amount < 1) {
       event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand)
     } else {
       event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(AddonItem.PuTuan, event.itemStack.amount - 1))
     }
   }
 }
+export { startLoop } from "./core/loop"
 </script>

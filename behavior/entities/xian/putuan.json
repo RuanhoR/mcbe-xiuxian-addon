@@ -1,5 +1,5 @@
 {
-  "format_version": "1.12.0",
+  "format_version": "1.26.30",
   "minecraft:entity": {
     "description": {
       "identifier": "xian:putuan",
@@ -12,15 +12,34 @@
         "value": 3
       },
       "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 0.25
+      },
       "minecraft:rideable": {
         "family_types": ["player"],
-        "seats": { "position": [0, 0, 0] }
+        "seats": { "position": [0, 0, 0] },
+        "interact_text": "action.interact.mount",
+        "on_rider_enter_event": "on_rider_enter",
+        "on_rider_exit_event": "on_rider_exit"
       },
       "minecraft:loot": {
-        "table": "loot_tables/xian/putuan"
+        "table": "loot_tables/xian/putuan.json"
       },
       "minecraft:type_family": {
         "family": ["toolentity"]
+      }
+    },
+    "events": {
+      "on_rider_enter": {
+        "queue_command": {
+          "command": "execute as @p[c=1] run xian:resolveplayerstatusputuanpoooooooooooooooooo inPuTuan"
+        }
+      },
+      "on_rider_exit": {
+        "queue_command": {
+          "command": "execute as @p[c=1] run xian:resolveplayerstatusputuanpoooooooooooooooooo exitPuTuan"
+        }
       }
     }
   }

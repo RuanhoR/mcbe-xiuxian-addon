@@ -1,7 +1,7 @@
-import { createApp } from "@mbler/mcx";
+import { createApp, registryCommand } from "@mbler/mcx";
 import "./Items.mcx";
 import App from "./app.mcx";
-import { startLoop } from "./core/loop";
 import { world } from "@minecraft/server";
-startLoop();
+import { resolveCommand } from "./command/resolve";
 createApp(App).mount(world);
+registryCommand(resolveCommand);
