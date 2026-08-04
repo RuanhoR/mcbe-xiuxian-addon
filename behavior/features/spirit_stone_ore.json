@@ -4,7 +4,7 @@
     "description": {
       "identifier": "xian:spirit_stone_ore_feature"
     },
-    "count": 3,
+    "count": 8,
     "replace_rules": [
       {
         "places_block": "xian:spirit_stone_ore",

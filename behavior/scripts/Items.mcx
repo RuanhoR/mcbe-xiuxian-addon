@@ -6,6 +6,7 @@
     <item id="xian/spirit_stone_level3.json">SpiritStoneLevel3</item>
     <item id="xian/spirit_stone_level4.json">SpiritStoneLevel4</item>
     <item id="xian/spirit_stone_level0.json">SpiritStoneLevel0</item>
+    <item id="xian/putuan.json">PuTuan</item>
   </items>
 </Component>
 
@@ -19,6 +20,7 @@ import SpiritStoneLevel1Icon from "./assets/spirit_stone_level1.png"
 import SpiritStoneLevel2Icon from "./assets/spirit_stone_level2.png"
 import SpiritStoneLevel3Icon from "./assets/spirit_stone_level3.png"
 import SpiritStoneLevel4Icon from "./assets/spirit_stone_level4.png"
+import PuTuanIcon from "./assets/putuan-place.png"
 const RawSpiritStone = new ItemComponent({
   components: {},
   format: "1.21.0",
@@ -61,13 +63,20 @@ const SpiritStoneLevel4 = new ItemComponent({
 });
 SpiritStoneLevel4.setMaxStackSize(64);
 SpiritStoneLevel4.setIcon(SpiritStoneLevel4Icon);
-// ==== Dan ==== 
+// ==== Chore ====
+const PuTuan = new ItemComponent({
+  components: {},
+  id: AddonItem.PuTuan,
+  format: "1.21.0"
+});
+PuTuan.setIcon(PuTuanIcon)
 export {
   RawSpiritStone,
   SpiritStoneLevel0,
   SpiritStoneLevel1,
   SpiritStoneLevel2,
   SpiritStoneLevel3,
-  SpiritStoneLevel4
+  SpiritStoneLevel4,
+  PuTuan
 }
 </script>

@@ -1,0 +1,136 @@
+import {
+  Dimension,
+  EntityComponentTypes,
+  EquipmentSlot,
+  ItemStack,
+  Player,
+  RawMessage,
+  Vector3,
+  World,
+} from "@minecraft/server";
+import { levelMaxLayer, PlayerLevelPhase } from "./config";
+import { PlayerLevelRefList } from "./types";
+const STACK_LIMIT = 64;
+export function getMainhand(player: Player) {
+  return player
+    .getComponent(EntityComponentTypes.Equippable)
+    ?.getEquipment(EquipmentSlot.Mainhand);
+}
+export const randomInt = (min: number, max: number) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+function getFortuneDrop(level: number): number {
+  const rand = Math.random() * (level + 2);
+  if (rand < 2) {
+    return 1;
+  } else {
+    return 2 + Math.floor(rand - 2);
+  }
+}
+function weightedPick(weights: Record<string, number>): string {
+  const entries = Object.entries(weights);
+  const total = entries.reduce((sum, [, w]) => sum + w, 0);
+  let r = Math.random() * total;
+  for (const [key, weight] of entries) {
+    r -= weight;
+    if (r <= 0) return key;
+  }
+  return entries[entries.length - 1][0];
+}
+export type Value = number | string | boolean | object;
+export class KV {
+  constructor(private _kvSource: World | Player | ItemStack) {}
+  public get<T extends Value>(key: string, defaultValue: Value): T {
+    let parsed = defaultValue as string | number | boolean;
+    let isJSON: boolean = false;
+    let needWrite: boolean = false;
+    const old = this._kvSource.getDynamicProperty(key);
+    if (!old || typeof old !== typeof defaultValue) needWrite = true;
+    if (typeof defaultValue == "object") {
+      isJSON = true;
+      parsed = JSON.stringify(parsed);
+    }
+    if (needWrite) {
+      this._kvSource.setDynamicProperty(key, parsed);
+    }
+    let current = this._kvSource.getDynamicProperty(key);
+    if (isJSON && typeof current == "string") current = JSON.parse(current);
+    return current as T;
+  }
+  public set(key: string, value: Value) {
+    this._kvSource.setDynamicProperty(
+      key,
+      typeof value == "object" ? JSON.stringify(value) : value,
+    );
+  }
+  public totalByte() {
+    return this._kvSource.getDynamicPropertyTotalByteCount;
+  }
+  public idList() {
+    return this._kvSource.getDynamicPropertyIds;
+  }
+}
+export function playerDestroyOre(
+  location: Vector3,
+  dim: Dimension,
+  useItem: ItemStack | undefined,
+  lootItem: Record<string, number>, // { itemId: weight } 权重
+  oreId: string,
+) {
+  const enchantable = useItem?.getComponent("minecraft:enchantable");
+  const silk = enchantable?.getEnchantment("silk_touch");
+  const fortune = enchantable?.getEnchantment("fortune");
+  if (silk) {
+    dim.spawnItem(new ItemStack(oreId, 1), location);
+    return;
+  }
+  const xpCount = Math.floor(Math.random() * 6) + 1;
+  dim.spawnXp(location, xpCount);
+  let totalCount = 1;
+  if (fortune && fortune.level !== undefined) {
+    totalCount = getFortuneDrop(fortune.level);
+  }
+  if (totalCount < 1) totalCount = 1;
+  const counts: Record<string, number> = {};
+  const itemIds = Object.keys(lootItem);
+  if (itemIds.length === 0) return;
+
+  for (let i = 0; i < totalCount; i++) {
+    const chosen = weightedPick(lootItem);
+    counts[chosen] = (counts[chosen] || 0) + 1;
+  }
+  for (const [itemId, count] of Object.entries(counts)) {
+    if (count <= 0) continue;
+    let remaining = count;
+    while (remaining > 0) {
+      const stackSize = Math.min(remaining, STACK_LIMIT);
+      dim.spawnItem(new ItemStack(itemId, stackSize), location);
+      remaining -= stackSize;
+    }
+  }
+}
+export function layerNumber(layer: number): RawMessage {
+  return {
+    translate: `sapi.playerlevel.layer.n${layer + 1}`,
+  };
+}
+export function getPhase(layer: number, maxLayer: number): RawMessage {
+  const ratio = layer / maxLayer;
+  const index = Math.floor(ratio * 4); // 0 ~ 3
+  return PlayerLevelPhase[Math.min(index, PlayerLevelPhase.length - 1)];
+}
+const SPIRIT_BASE = 20;
+const SPIRIT_LAYER_STEP = 10;
+function realmPeak(levelRef: number) {
+  let peak = SPIRIT_BASE;
+  for (let r = 1; r <= levelRef; r++) {
+    peak +=
+      SPIRIT_LAYER_STEP * 2 ** r * levelMaxLayer[(r + 1) as PlayerLevelRefList];
+  }
+  return peak;
+}
+export function getSpiritMax(levelRef: number, layer: number) {
+  if (levelRef === 0) return SPIRIT_BASE;
+  return (
+    realmPeak(levelRef - 1) + SPIRIT_LAYER_STEP * 2 ** levelRef * (layer + 1)
+  );
+}

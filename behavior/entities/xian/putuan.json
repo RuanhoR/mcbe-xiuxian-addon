@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xian:putuan",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:health": {
+        "max": 3,
+        "value": 3
+      },
+      "minecraft:physics": {},
+      "minecraft:rideable": {
+        "family_types": ["player"],
+        "seats": { "position": [0, 0, 0] }
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/xian/putuan"
+      },
+      "minecraft:type_family": {
+        "family": ["toolentity"]
+      }
+    }
+  }
+}

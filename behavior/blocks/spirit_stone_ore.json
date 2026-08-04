@@ -6,7 +6,7 @@
     },
     "components": {
       "minecraft:geometry": "minecraft:geometry.full_block",
-      "minecraft:loot": "loot_tables/luckblock/null.json",
+      "minecraft:loot": "loot_tables/empty",
       "minecraft:material_instances": {
         "north": {
           "texture": "SpiritStone"

@@ -1,6 +1,18 @@
 <Event @after>
-  worldLoad = onWorldLoad
+  itemUse = onItemUse
+  McxExtendsBy = ./EventBefore.mcx
 </Event>
 <script lang="ts">
-export function onWorldLoad() { }
+import { EntityComponentTypes, EquipmentSlot, ItemStack, world, type ItemUseAfterEvent, type VanillaEntityIdentifier } from "@minecraft/server";
+import { AddonItem } from "./config";
+export function onItemUse(event: ItemUseAfterEvent) {
+  if (event.itemStack.typeId == AddonItem.PuTuan) {
+    event.source.dimension.spawnEntity("xian:putuan" as unknown as VanillaEntityIdentifier, event.source.location);
+    if (event.itemStack.amount < 1) {
+      event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand)
+    } else {
+      event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(AddonItem.PuTuan, event.itemStack.amount - 1))
+    }
+  }
+}
 </script>

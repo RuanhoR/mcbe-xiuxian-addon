@@ -1,0 +1,48 @@
+<Event @before>
+  playerBreakBlock = breakBlock
+</Event>
+<script lang="ts">
+import { PlayerBreakBlockBeforeEvent, system } from "@minecraft/server";
+import { AddonBlock, AddonItem } from "./config";
+import { playerDestroyOre } from "./utils";
+
+export function breakBlock(event: PlayerBreakBlockBeforeEvent) {
+  const blockTypeId = event.block.typeId;
+  if (blockTypeId == AddonBlock.SpiritStoneOre && event.player.getGameMode() !== "Creative") {
+    /**
+     * In SpiritStone Ore, Loot table point a null loot table, but use 'silk_touch' ench, still loot original block...
+     * So here, use event.cancel = true to intercept default handler. All loot from sapi.
+    */
+    event.cancel = true;
+    system.run(() => {
+      event.block.setType("minecraft:air")
+      // break effect
+      // event.player.camera.fade({
+      //   fadeColor: {
+      //     red: 0,
+      //     blue: 0,
+      //     green: 0
+      //   },
+      //   fadeTime: {
+      //     fadeOutTime: 0.1,
+      //     fadeInTime: 0.001,
+      //     holdTime: 0.0001
+      //   }
+      // })
+      const itemStack = event.itemStack
+      if (
+        !itemStack ||
+        !itemStack.hasTag("minecraft:is_tool") ||
+        !itemStack.hasTag("minecraft:is_pickaxe") ||
+        (!itemStack.hasTag("minecraft:iron_tier") &&
+          !itemStack.hasTag("minecraft:diamond_tier") &&
+          !itemStack.hasTag("minecraft:netherite_tier"))
+      )
+        return;
+      playerDestroyOre(event.block.location, event.dimension, itemStack, {
+        [AddonItem.RawSpiritStoneOre]: 100
+      }, AddonBlock.SpiritStoneOre);
+    })
+  }
+}
+</script>
