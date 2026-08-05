@@ -6,7 +6,7 @@ export default defineConfig({
   // description: use in manifest generate
   description: "A XiuXian Mod",
   // mcVersion: work on ... mcbe version, e.g 1.26.32
-  mcVersion: "1.26.31",
+  mcVersion: "1.26.40",
   // out code minfiy mode, support: "terser" | "esbuild | "oxc" | false , "terser" | "esbuild" need install on project
   minify: "oxc",
   // out to game in dev(env.BUILD_MODULE != release)

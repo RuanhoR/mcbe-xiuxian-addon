@@ -1,7 +1,7 @@
 {
   "name": "@ruanhor/xiuxian",
   "description": "A XiuXian Mod",
-  "version": "0.0.1",
+  "version": "0.0.0-alpha.1",
   "packageManager": "pnpm@11.0.0",
   "engines": {
     "node": ">=18.0.0"

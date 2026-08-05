@@ -33,3 +33,5 @@ sapi.playerlevel.layer.n10=十层
 sapi.playerlevel.layer.n11=十一层
 sapi.playerlevel.layer.n12=十二层
 sapi.playerlevel.layer.n13=十三层
+sapi.message.spiritstone.mustuseinputuan=灵石必须在做在蒲团上时使用
+sapi.message.intoputuan.formtitle=修炼表单

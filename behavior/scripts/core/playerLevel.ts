@@ -20,11 +20,7 @@ export class PlayerLevel {
     return {
       levelRef: this._level,
       name: {
-        rawtext: [
-          MortalPlayerLevel[this._level],
-          { text: " " },
-          layerNumber(this._layer),
-        ],
+        rawtext: [MortalPlayerLevel[this._level], layerNumber(this._layer)],
       },
       layer: this._layer,
       phase: getPhase(
@@ -45,6 +41,7 @@ export class PlayerLevel {
   public updateSpirit(spirit: number) {
     this._spirit = spirit;
     this._kv.set("_spirit", spirit);
+    this.notify();
     this.notify();
   }
   private notify() {

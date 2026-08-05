@@ -6,7 +6,7 @@ export const resolveCommand = new Command(
 );
 const task: Parameters<typeof onPlayerStatusChange>[0][] = [];
 export function onPlayerStatusChange(
-  callback: (status: string, player: Player) => {},
+  callback: (status: string, player: Player) => void,
 ) {
   task.push(callback);
 }
@@ -22,9 +22,16 @@ resolveCommand.action((origin, ...args) => {
       status: CustomCommandStatus.Failure,
     };
   }
+  if (typeof args[0] !== "string") {
+    return {
+      message: "Must include string",
+      status: CustomCommandStatus.Failure,
+    };
+  }
+
   const player = origin.sourceEntity as Player;
-  player.setDynamicProperty("_resolvestatus", args[0] as string);
-  console.log(args[0]);
+  player.setDynamicProperty("_bstatus", args[0] as string);
+  task.forEach((r) => r(args[0] as string, player));
   return {
     message: "",
     status: CustomCommandStatus.Success,

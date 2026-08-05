@@ -5,14 +5,28 @@
 </Event>
 <script lang="ts">
 import { EntityComponentTypes, EquipmentSlot, ItemStack, world, type ItemUseAfterEvent, type VanillaEntityIdentifier } from "@minecraft/server";
-import { AddonItem } from "./config";
+import { AddonItem, SpiritStoneLevelMap } from "./config";
 export function onItemUse(event: ItemUseAfterEvent) {
-  if (event.itemStack.typeId == AddonItem.PuTuan) {
-    event.source.dimension.spawnEntity("xian:putuan" as unknown as VanillaEntityIdentifier, event.source.location);
+  function removeItem() {
     if (event.source.getGameMode() !== "Creative") if (event.itemStack.amount < 1) {
       event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand)
     } else {
       event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(AddonItem.PuTuan, event.itemStack.amount - 1))
+    }
+  }
+  if (event.itemStack.typeId == AddonItem.PuTuan) {
+    event.source.dimension.spawnEntity("xian:putuan" as unknown as VanillaEntityIdentifier, event.source.location);
+    removeItem();
+  } else if (event.itemStack?.typeId?.startsWith("xian:spirit_stone_level_")) {
+    const spiritStoneLevel = SpiritStoneLevelMap[event.itemStack?.typeId as keyof typeof SpiritStoneLevelMap];
+    if (!spiritStoneLevel) return;
+    const status = event.source.getDynamicProperty("_bstatus");
+    if (status !== "inPuTuan") {
+      event.source.sendMessage({
+        translate: "sapi.message.spiritstone.mustuseinputuan"
+      })
+    } else {
+
     }
   }
 }

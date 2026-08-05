@@ -87,3 +87,10 @@ export const levelMaxLayer = {
 } satisfies {
   [key in `${PlayerLevelRefList}`]: number;
 };
+export const SpiritStoneLevelMap = {
+  [AddonItem.SpiritStoneLevel0]: 0,
+  [AddonItem.SpiritStoneLevel1]: 1,
+  [AddonItem.SpiritStoneLevel2]: 2,
+  [AddonItem.SpiritStoneLevel3]: 3,
+  [AddonItem.SpiritStoneLevel4]: 4,
+} as const;
