@@ -7,9 +7,11 @@
     <item id="xian/spirit_stone_level4.json">SpiritStoneLevel4</item>
     <item id="xian/spirit_stone_level0.json">SpiritStoneLevel0</item>
     <item id="xian/putuan.json">PuTuan</item>
+    <item id="xian/zhenpan.json">ZhenPan</item>
+    <item id="xian/sp_gongfa.json">GongFa</item>
+    <item id="xian/gongfa-xidei.json">GongFaXidei</item>
   </items>
 </Component>
-
 <script lang="ts">
 import { ItemComponent } from "@mbler/mcx-component";
 import { AddonItem } from "./config";
@@ -21,55 +23,29 @@ import SpiritStoneLevel2Icon from "./assets/spirit_stone_level2.png"
 import SpiritStoneLevel3Icon from "./assets/spirit_stone_level3.png"
 import SpiritStoneLevel4Icon from "./assets/spirit_stone_level4.png"
 import PuTuanIcon from "./assets/putuan-place.png"
-const RawSpiritStone = new ItemComponent({
-  components: {},
-  format: "1.21.0",
-  id: AddonItem.RawSpiritStoneOre
-});
-RawSpiritStone.setMaxStackSize(64);
-RawSpiritStone.setIcon(RawSpiritStoneOreIcon);
-const SpiritStoneLevel0 = new ItemComponent({
-  components: {},
-  format: "1.21.0",
-  id: AddonItem.SpiritStoneLevel0
-});
-SpiritStoneLevel0.setMaxStackSize(64);
-SpiritStoneLevel0.setIcon(SpiritStoneLevel0Icon);
-const SpiritStoneLevel1 = new ItemComponent({
-  components: {},
-  format: "1.21.0",
-  id: AddonItem.SpiritStoneLevel1
-});
-SpiritStoneLevel1.setMaxStackSize(64);
-SpiritStoneLevel1.setIcon(SpiritStoneLevel1Icon);
-const SpiritStoneLevel2 = new ItemComponent({
-  components: {},
-  format: "1.21.0",
-  id: AddonItem.SpiritStoneLevel2
-});
-SpiritStoneLevel2.setMaxStackSize(64);
-SpiritStoneLevel2.setIcon(SpiritStoneLevel2Icon);
-const SpiritStoneLevel3 = new ItemComponent({
-  components: {},
-  format: "1.21.0",
-  id: AddonItem.SpiritStoneLevel3
-});
-SpiritStoneLevel3.setMaxStackSize(64);
-SpiritStoneLevel3.setIcon(SpiritStoneLevel3Icon);
-const SpiritStoneLevel4 = new ItemComponent({
-  components: {},
-  format: "1.21.0",
-  id: AddonItem.SpiritStoneLevel4
-});
-SpiritStoneLevel4.setMaxStackSize(64);
-SpiritStoneLevel4.setIcon(SpiritStoneLevel4Icon);
+function createItem(id: string, icon?: string, maxStack = 64) {
+  const item = new ItemComponent({
+    components: {},
+    format: "1.21.0",
+    id
+  })
+  item.setMaxStackSize(maxStack)
+  if (icon) item.setIcon(icon)
+  return item
+}
+
+const RawSpiritStone = createItem(AddonItem.RawSpiritStoneOre, RawSpiritStoneOreIcon)
+const SpiritStoneLevel0 = createItem(AddonItem.SpiritStoneLevel0, SpiritStoneLevel0Icon)
+const SpiritStoneLevel1 = createItem(AddonItem.SpiritStoneLevel1, SpiritStoneLevel1Icon)
+const SpiritStoneLevel2 = createItem(AddonItem.SpiritStoneLevel2, SpiritStoneLevel2Icon)
+const SpiritStoneLevel3 = createItem(AddonItem.SpiritStoneLevel3, SpiritStoneLevel3Icon)
+const SpiritStoneLevel4 = createItem(AddonItem.SpiritStoneLevel4, SpiritStoneLevel4Icon)
 // ==== Chore ====
-const PuTuan = new ItemComponent({
-  components: {},
-  id: AddonItem.PuTuan,
-  format: "1.21.0"
-});
-PuTuan.setIcon(PuTuanIcon)
+const PuTuan = createItem(AddonItem.PuTuan, PuTuanIcon)
+const ZhenPan = createItem(AddonItem.ZhenPan)
+// ==== GongFa ====
+const GongFa = createItem(AddonItem.GongFa, undefined, 1)
+const GongFaXidei = createItem(AddonItem.GongFaXidei, undefined, 1)
 export {
   RawSpiritStone,
   SpiritStoneLevel0,
@@ -77,6 +53,9 @@ export {
   SpiritStoneLevel2,
   SpiritStoneLevel3,
   SpiritStoneLevel4,
-  PuTuan
+  PuTuan,
+  ZhenPan,
+  GongFa,
+  GongFaXidei
 }
 </script>

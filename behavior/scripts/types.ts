@@ -1,6 +1,5 @@
-import { RawMessage } from "@minecraft/server";
+import type { RawMessage } from "@minecraft/server";
 import { MortalPlayerLevel } from "./config";
-
 export type RangeFrom1<
   N extends number,
   Acc extends number[] = [],

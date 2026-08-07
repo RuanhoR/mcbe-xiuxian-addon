@@ -1,11 +1,13 @@
 <Event @after>
   itemUse = onItemUse
   worldLoad = startLoop
+  entityHitEntity = hit
   McxExtendsBy = ./EventBefore.mcx
 </Event>
 <script lang="ts">
-import { EntityComponentTypes, EquipmentSlot, ItemStack, world, type ItemUseAfterEvent, type VanillaEntityIdentifier } from "@minecraft/server";
+import { EntityComponentTypes, EntityHitEntityAfterEvent, EquipmentSlot, ItemStack, world, type ItemUseAfterEvent, type VanillaEntityIdentifier } from "@minecraft/server";
 import { AddonItem, SpiritStoneLevelMap } from "./config";
+import { handleGongFaUse, handleGongFaXideiUse } from "./core/gongfa";
 export function onItemUse(event: ItemUseAfterEvent) {
   function removeItem() {
     if (event.source.getGameMode() !== "Creative") if (event.itemStack.amount < 1) {
@@ -28,6 +30,15 @@ export function onItemUse(event: ItemUseAfterEvent) {
     } else {
 
     }
+  } else if (event.itemStack?.typeId == AddonItem.GongFa) {
+    handleGongFaUse(event.source, event.itemStack);
+  } else if (event.itemStack?.typeId == AddonItem.GongFaXidei) {
+    handleGongFaXideiUse(event.source, event.itemStack);
+  }
+}
+export function hit(event: EntityHitEntityAfterEvent) {
+  if (event.hitEntity.typeId == "xian:putuan" && event.damagingEntity.typeId == "minecraft:player") {
+    event.hitEntity.kill()
   }
 }
 export { startLoop } from "./core/loop"

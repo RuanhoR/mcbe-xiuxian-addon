@@ -1,5 +1,10 @@
 import { Command } from "@mbler/mcx";
-import { CustomCommandStatus, Player } from "@minecraft/server";
+import {
+  CommandPermissionLevel,
+  CustomCommandStatus,
+  Player,
+  system,
+} from "@minecraft/server";
 
 export const resolveCommand = new Command(
   "xian:resolveplayerstatusputuanpoooooooooooooooooo",
@@ -11,7 +16,7 @@ export function onPlayerStatusChange(
   task.push(callback);
 }
 resolveCommand.addMandatoryParameter("status", "string");
-
+resolveCommand.setPermissionLevel(CommandPermissionLevel.GameDirectors);
 resolveCommand.action((origin, ...args) => {
   if (
     origin.sourceType !== "Entity" ||
@@ -28,10 +33,9 @@ resolveCommand.action((origin, ...args) => {
       status: CustomCommandStatus.Failure,
     };
   }
-
   const player = origin.sourceEntity as Player;
   player.setDynamicProperty("_bstatus", args[0] as string);
-  task.forEach((r) => r(args[0] as string, player));
+  system.run(() => task.forEach((r) => r(args[0] as string, player)));
   return {
     message: "",
     status: CustomCommandStatus.Success,

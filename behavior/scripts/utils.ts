@@ -8,13 +8,28 @@ import {
   Vector3,
   World,
 } from "@minecraft/server";
-import { levelMaxLayer, PlayerLevelPhase } from "./config";
-import { PlayerLevelRefList } from "./types";
+import { PlayerLevelPhase } from "./config";
 const STACK_LIMIT = 64;
 export function getMainhand(player: Player) {
   return player
     .getComponent(EntityComponentTypes.Equippable)
     ?.getEquipment(EquipmentSlot.Mainhand);
+}
+export function setMainhand(player: Player, item: ItemStack | undefined) {
+  player
+    .getComponent(EntityComponentTypes.Equippable)
+    ?.setEquipment(EquipmentSlot.Mainhand, item);
+}
+export function consumeMainhand(player: Player, count = 1) {
+  const current = getMainhand(player);
+  if (!current) return;
+  const remaining = current.amount - count;
+  if (remaining <= 0) {
+    setMainhand(player, undefined);
+  } else {
+    current.amount = remaining;
+    setMainhand(player, current);
+  }
 }
 export const randomInt = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -120,19 +135,13 @@ export function getPhase(layer: number, maxLayer: number): RawMessage {
 }
 const SPIRIT_BASE = 20;
 const SPIRIT_LAYER_STEP = 10;
-function realmPeak(levelRef: number) {
-  let peak = SPIRIT_BASE;
-  for (let r = 1; r <= levelRef; r++) {
-    peak +=
-      SPIRIT_LAYER_STEP * 2 ** r * levelMaxLayer[(r + 1) as PlayerLevelRefList];
-  }
-  return peak;
-}
+/**
+ * Spirit capacity of the current realm + layer. Spirit resets to 0 after
+ * each breakthrough, so the cap is the amount that must be filled to advance.
+ */
 export function getSpiritMax(levelRef: number, layer: number) {
   if (levelRef === 0) return SPIRIT_BASE;
-  return (
-    realmPeak(levelRef - 1) + SPIRIT_LAYER_STEP * 2 ** levelRef * (layer + 1)
-  );
+  return SPIRIT_LAYER_STEP * 2 ** levelRef * (layer + 1);
 }
 export function rawMessage(...args: unknown[]): { rawtext: RawMessage[] } {
   const convert = (arg: unknown): RawMessage => {
@@ -172,5 +181,10 @@ export function rawMessage(...args: unknown[]): { rawtext: RawMessage[] } {
   }
   return {
     rawtext: args.map(convert),
+  };
+}
+export function t(t: string): RawMessage {
+  return {
+    translate: t,
   };
 }

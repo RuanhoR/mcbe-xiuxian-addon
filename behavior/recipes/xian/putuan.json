@@ -1,0 +1,21 @@
+{
+  "format_version": "1.17",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "xian:putuan_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [" # ", "#P#", " # "],
+    "key": {
+      "#": {
+        "item": "minecraft:planks"
+      },
+      "P": {
+        "item": "minecraft:paper"
+      }
+    },
+    "result": {
+      "item": "xian:putuan_place"
+    }
+  }
+}

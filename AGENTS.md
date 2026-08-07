@@ -11,3 +11,4 @@
 
 - `mbler.config.js` 中 `outGameOnDev: true`：dev 模式下构建直接进游戏
 - 修改 behavior/resources 下的 JSON/资源时，由后台 `pnpm dev` 自动重新构建到游戏，无需手动构建
+- 验证脚本改动 / 查看生成的物品等 JSON 产物时，直接跑 `pnpm build`（release 模式输出到 `./dist`），不要去翻游戏目录

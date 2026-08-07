@@ -8,8 +8,8 @@
     },
     "components": {
       "minecraft:health": {
-        "max": 3,
-        "value": 3
+        "max": 9999,
+        "value": 9999
       },
       "minecraft:physics": {},
       "minecraft:collision_box": {
@@ -25,6 +25,9 @@
       },
       "minecraft:loot": {
         "table": "loot_tables/xian/putuan.json"
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
       },
       "minecraft:type_family": {
         "family": ["toolentity"]

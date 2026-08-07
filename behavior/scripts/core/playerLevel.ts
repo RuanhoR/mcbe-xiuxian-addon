@@ -1,9 +1,27 @@
-import { Player, PlayerLeaveBeforeEventSignal, world } from "@minecraft/server";
+import {
+  Player,
+  PlayerLeaveBeforeEventSignal,
+  RawMessage,
+  world,
+} from "@minecraft/server";
 import { getPhase, getSpiritMax, KV, layerNumber } from "../utils";
 import { PlayerLevelData, PlayerLevelRefList } from "../types";
 import { levelMaxLayer, MortalPlayerLevel } from "../config";
 
 const watchers = new Map<string, Set<(data: PlayerLevelData) => void>>();
+
+/** A single breakthrough (layer or realm advancement). */
+export interface Breakthrough {
+  levelRef: number;
+  layer: number;
+  /** Display name of the newly reached realm + layer. */
+  name: RawMessage;
+}
+
+/** Max layer index (0-based) of a realm. `levelRef` 0..9 maps to keys 1..10. */
+function realmMaxLayer(levelRef: number): number {
+  return levelMaxLayer[(levelRef + 1) as PlayerLevelRefList];
+}
 
 export class PlayerLevel {
   private _kv: KV;
@@ -23,13 +41,71 @@ export class PlayerLevel {
         rawtext: [MortalPlayerLevel[this._level], layerNumber(this._layer)],
       },
       layer: this._layer,
-      phase: getPhase(
-        this._layer,
-        levelMaxLayer[(this._level + 1) as PlayerLevelRefList],
-      ),
+      phase: getPhase(this._layer, realmMaxLayer(this._level)),
       spirit: this._spirit,
       spiritMax: getSpiritMax(this._level, this._layer),
     };
+  }
+  /** Whether the player is at the highest realm and its final layer. */
+  private isPeak(): boolean {
+    return (
+      this._level >= MortalPlayerLevel.length - 1 &&
+      this._layer >= realmMaxLayer(this._level) - 1
+    );
+  }
+  /** The display name of a given realm + layer. */
+  private realmName(levelRef: number, layer: number): RawMessage {
+    return {
+      rawtext: [MortalPlayerLevel[levelRef], layerNumber(layer)],
+    };
+  }
+  /**
+   * Grant spirit, then automatically break through (层 → realm) as long as
+   * spirit fills the current spiritMax. Overflow beyond the absolute peak
+   * is capped. Returns every breakthrough performed.
+   */
+  public addSpirit(amount: number): Breakthrough[] {
+    this._spirit += amount;
+    const breakthroughs = this.breakthroughIfReady();
+    if (breakthroughs.length === 0) {
+      this._kv.set("_spirit", this._spirit);
+      this.notify();
+    }
+    return breakthroughs;
+  }
+  /**
+   * While spirit reaches spiritMax, break through a layer; at a realm's max
+   * layer, advance to the next realm (layer resets to 0). Each breakthrough
+   * consumes the filled spirit bar (spirit resets to 0). Returns every
+   * breakthrough performed.
+   */
+  public breakthroughIfReady(): Breakthrough[] {
+    const breakthroughs: Breakthrough[] = [];
+    while (true) {
+      const max = getSpiritMax(this._level, this._layer);
+      if (this._spirit < max) break;
+      if (this.isPeak()) {
+        this._spirit = max;
+        break;
+      }
+      this._spirit -= max;
+      if (this._layer + 1 >= realmMaxLayer(this._level)) {
+        this._level += 1;
+        this._layer = 0;
+      } else {
+        this._layer += 1;
+      }
+      breakthroughs.push({
+        levelRef: this._level,
+        layer: this._layer,
+        name: this.realmName(this._level, this._layer),
+      });
+    }
+    this._kv.set("_level", this._level);
+    this._kv.set("_layer", this._layer);
+    this._kv.set("_spirit", this._spirit);
+    this.notify();
+    return breakthroughs;
   }
   public updateLevel(levelRef: number, layer: number) {
     this._level = levelRef;
@@ -41,7 +117,6 @@ export class PlayerLevel {
   public updateSpirit(spirit: number) {
     this._spirit = spirit;
     this._kv.set("_spirit", spirit);
-    this.notify();
     this.notify();
   }
   private notify() {
