@@ -1,13 +1,16 @@
 <Event @after>
   itemUse = onItemUse
+  itemCompleteUse = onItemCompleteUse
   worldLoad = startLoop
   entityHitEntity = hit
   McxExtendsBy = ./EventBefore.mcx
 </Event>
 <script lang="ts">
-import { EntityComponentTypes, EntityHitEntityAfterEvent, EquipmentSlot, ItemStack, world, type ItemUseAfterEvent, type VanillaEntityIdentifier } from "@minecraft/server";
+import { EntityComponentTypes, EntityDamageCause, EntityHitEntityAfterEvent, EquipmentSlot, ItemStack, Player, world, type ItemCompleteUseAfterEvent, type ItemUseAfterEvent, type VanillaEntityIdentifier } from "@minecraft/server";
 import { AddonItem, SpiritStoneLevelMap } from "./config";
 import { handleGongFaUse, handleGongFaXideiUse } from "./core/gongfa";
+import { handleDanYaoCompleteUse } from "./core/danyao";
+import { PlayerLevel } from "./core/playerLevel"
 export function onItemUse(event: ItemUseAfterEvent) {
   function removeItem() {
     if (event.source.getGameMode() !== "Creative") if (event.itemStack.amount < 1) {
@@ -36,9 +39,25 @@ export function onItemUse(event: ItemUseAfterEvent) {
     handleGongFaXideiUse(event.source, event.itemStack);
   }
 }
+export function onItemCompleteUse(event: ItemCompleteUseAfterEvent) {
+  if (event.itemStack?.typeId == AddonItem.DanYao) {
+    handleDanYaoCompleteUse(event.source, event.itemStack);
+  }
+}
 export function hit(event: EntityHitEntityAfterEvent) {
   if (event.hitEntity.typeId == "xian:putuan" && event.damagingEntity.typeId == "minecraft:player") {
-    event.hitEntity.kill()
+    event.hitEntity.kill();
+    return;
+  }
+  if (event.damagingEntity.typeId == "minecraft:player") {
+    const player = event.damagingEntity as Player;
+    const playerLevelData = new PlayerLevel(player).getLevel();
+    if (event.hitEntity.isValid && playerLevelData.levelRef > 1) {
+      event.hitEntity.applyDamage(2 * playerLevelData.levelRef, {
+        damagingEntity: event.damagingEntity,
+        cause: EntityDamageCause.entityAttack
+      })
+    }
   }
 }
 export { startLoop } from "./core/loop"

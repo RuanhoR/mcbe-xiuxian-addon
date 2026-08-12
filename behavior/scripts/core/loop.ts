@@ -3,6 +3,7 @@ import { onPlayerStatusChange } from "../command/resolve";
 import { ActionFormData } from "@minecraft/server-ui";
 import { rawMessage, t } from "../utils";
 import { autoIdentifyFirstGongFa } from "./gongfa";
+import { autoIdentifyFirstDanYao } from "./danyao";
 import { showCultivateGongFaMenu, showGongFaMenu } from "./gongfaMenu";
 import { startCultivation, stopCultivation } from "./cultivate";
 import { PlayerLevel } from "./playerLevel";
@@ -36,12 +37,21 @@ export function startLoop() {
         rawMessage`${data.name} ${data.phase} ${data.spirit}/${data.spiritMax}`,
       );
       const result = autoIdentifyFirstGongFa(player);
-      if (!result.found) continue;
-      player.sendMessage(
-        result.def
-          ? rawMessage`${t("sapi.gongfa.identify.step2")} ${t(result.def.nameKey)}`
-          : t("sapi.gongfa.identify.done"),
-      );
+      if (result.found) {
+        player.sendMessage(
+          result.def
+            ? rawMessage`${t("sapi.gongfa.identify.step2")} ${t(result.def.nameKey)}`
+            : t("sapi.gongfa.identify.done"),
+        );
+      }
+      const pillResult = autoIdentifyFirstDanYao(player);
+      if (pillResult.found) {
+        player.sendMessage(
+          pillResult.def
+            ? rawMessage`${t("sapi.danyao.identify.done")} ${t(pillResult.def.nameKey)}`
+            : t("sapi.danyao.identify.step1"),
+        );
+      }
     }
   }, AUTO_IDENTIFY_INTERVAL);
 }

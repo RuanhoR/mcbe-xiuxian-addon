@@ -10,6 +10,7 @@
     <item id="xian/zhenpan.json">ZhenPan</item>
     <item id="xian/sp_gongfa.json">GongFa</item>
     <item id="xian/gongfa-xidei.json">GongFaXidei</item>
+    <item id="xian/sp_danyao.json">DanYao</item>
   </items>
 </Component>
 <script lang="ts">
@@ -22,7 +23,9 @@ import SpiritStoneLevel1Icon from "./assets/spirit_stone_level1.png"
 import SpiritStoneLevel2Icon from "./assets/spirit_stone_level2.png"
 import SpiritStoneLevel3Icon from "./assets/spirit_stone_level3.png"
 import SpiritStoneLevel4Icon from "./assets/spirit_stone_level4.png"
-import PuTuanIcon from "./assets/putuan-place.png"
+import PuTuanIcon from "./assets/putuan-place.png";
+import DanYaoIcon from "./assets/danyao.png";
+import GongFaIcon from "./assets/gongfa.png"
 function createItem(id: string, icon?: string, maxStack = 64) {
   const item = new ItemComponent({
     components: {},
@@ -44,8 +47,16 @@ const SpiritStoneLevel4 = createItem(AddonItem.SpiritStoneLevel4, SpiritStoneLev
 const PuTuan = createItem(AddonItem.PuTuan, PuTuanIcon)
 const ZhenPan = createItem(AddonItem.ZhenPan)
 // ==== GongFa ====
-const GongFa = createItem(AddonItem.GongFa, undefined, 1)
+const GongFa = createItem(AddonItem.GongFa, GongFaIcon, 1)
 const GongFaXidei = createItem(AddonItem.GongFaXidei, undefined, 1)
+// ==== DanYao ====
+const DanYao = createItem(AddonItem.DanYao, DanYaoIcon, 1)
+DanYao.setFood({
+  nutrition: 1,
+  saturation_modifier: 1,
+  can_always_eat: true,
+
+})
 export {
   RawSpiritStone,
   SpiritStoneLevel0,
@@ -56,6 +67,7 @@ export {
   PuTuan,
   ZhenPan,
   GongFa,
-  GongFaXidei
+  GongFaXidei,
+  DanYao
 }
 </script>

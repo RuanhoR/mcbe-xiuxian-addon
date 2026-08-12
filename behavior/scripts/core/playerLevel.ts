@@ -60,9 +60,22 @@ export class PlayerLevel {
     };
   }
   /**
-   * Grant spirit, then automatically break through (层 → realm) as long as
-   * spirit fills the current spiritMax. Overflow beyond the absolute peak
-   * is capped. Returns every breakthrough performed.
+   * Whether the player is stuck at a realm's bottleneck: the final layer of
+   * a realm, with a full spirit bar. Only eating a pill of the next realm
+   * can break through from here.
+   */
+  public isRealmBottleneck(): boolean {
+    if (this.isPeak()) return false;
+    return (
+      this._layer >= realmMaxLayer(this._level) - 1 &&
+      this._spirit >= getSpiritMax(this._level, this._layer)
+    );
+  }
+  /**
+   * Grant spirit, then automatically advance layers as long as spirit fills
+   * the current layer's spiritMax. Realm crossing is NOT automatic here; it
+   * only happens through {@link breakthroughRealm} (e.g. by eating a pill).
+   * Overflow beyond the absolute peak is capped. Returns every layer-up.
    */
   public addSpirit(amount: number): Breakthrough[] {
     this._spirit += amount;
@@ -74,38 +87,56 @@ export class PlayerLevel {
     return breakthroughs;
   }
   /**
-   * While spirit reaches spiritMax, break through a layer; at a realm's max
-   * layer, advance to the next realm (layer resets to 0). Each breakthrough
-   * consumes the filled spirit bar (spirit resets to 0). Returns every
-   * breakthrough performed.
+   * While spirit reaches the current layer's spiritMax, advance one layer.
+   * At a realm's final layer the bar caps and the player stays (bottleneck),
+   * never advancing to the next realm automatically. Returns every layer-up.
    */
   public breakthroughIfReady(): Breakthrough[] {
     const breakthroughs: Breakthrough[] = [];
     while (true) {
       const max = getSpiritMax(this._level, this._layer);
       if (this._spirit < max) break;
-      if (this.isPeak()) {
+      if (this._layer + 1 < realmMaxLayer(this._level)) {
+        this._spirit -= max;
+        this._layer += 1;
+        breakthroughs.push({
+          levelRef: this._level,
+          layer: this._layer,
+          name: this.realmName(this._level, this._layer),
+        });
+      } else {
+        // Final layer of the realm: cap the bar, wait for a pill.
         this._spirit = max;
         break;
       }
-      this._spirit -= max;
-      if (this._layer + 1 >= realmMaxLayer(this._level)) {
-        this._level += 1;
-        this._layer = 0;
-      } else {
-        this._layer += 1;
-      }
-      breakthroughs.push({
-        levelRef: this._level,
-        layer: this._layer,
-        name: this.realmName(this._level, this._layer),
-      });
     }
     this._kv.set("_level", this._level);
     this._kv.set("_layer", this._layer);
     this._kv.set("_spirit", this._spirit);
     this.notify();
     return breakthroughs;
+  }
+  /**
+   * Break through to the next realm (used when eating a pill of the target
+   * realm at the bottleneck). Layer and spirit reset to 0. Returns the new
+   * realm, or undefined if already at the peak.
+   */
+  public breakthroughRealm(): Breakthrough | undefined {
+    if (this.isPeak() || this._level >= MortalPlayerLevel.length - 1) {
+      return undefined;
+    }
+    this._level += 1;
+    this._layer = 0;
+    this._spirit = 0;
+    this._kv.set("_level", this._level);
+    this._kv.set("_layer", this._layer);
+    this._kv.set("_spirit", this._spirit);
+    this.notify();
+    return {
+      levelRef: this._level,
+      layer: this._layer,
+      name: this.realmName(this._level, this._layer),
+    };
   }
   public updateLevel(levelRef: number, layer: number) {
     this._level = levelRef;
