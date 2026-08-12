@@ -21,9 +21,10 @@ import { PlayerLevel } from "./playerLevel";
  *   1. Unidentified  - empty lore, level has not been rolled yet.
  *   2. Rolled        - lore equals `§0<levelRef>§r §6<levelName>§r`, the level is
  *                      hidden in black while the realm name is shown in gold.
- *   3. Identified    - a specific gongfa of the rolled level. Its name tag is set
- *                      to the gongfa's name and it carries a mastery
- *                      (入门 / 精通 / 至臻 / 大师).
+ *   3. Identified    - a specific gongfa of the rolled level. Its name and
+ *                      mastery are written to the lore as translated raw
+ *                      messages, and the level/mastery are persisted in
+ *                      dynamic properties.
  *   4. Learned       - bound to a player's skill slot. It can be withdrawn as a
  *                      `xian:gongfa-xidei` item whose lore holds the slot number;
  *                      using that item releases the bound skill.
@@ -188,7 +189,6 @@ export function identifyGongFa(
   item.setDynamicProperty(GongFaDpKeys.id, def.id);
   item.setDynamicProperty(GongFaDpKeys.level, def.levelRef);
   item.setDynamicProperty(GongFaDpKeys.mastery, GongFaMastery.Entry);
-  item.nameTag = def.name;
   return def;
 }
 
