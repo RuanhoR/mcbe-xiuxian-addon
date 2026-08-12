@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "mbler";
+import { writeFile } from "node:fs/promises";
 // mbler config
 // defineConfig is for IDE's auto-complete
 export default defineConfig({
@@ -22,6 +23,9 @@ export default defineConfig({
     // should true
     bundle: true,
     cache: "file",
+    async onEnd(ctx) {
+      writeFile;
+    },
   },
   outdir: {
     resources: "./dist/res",

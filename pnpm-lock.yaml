@@ -10,35 +10,35 @@ importers:
     dependencies:
       '@mbler/mcx':
         specifier: 0.0.5
-        version: 0.0.5(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+        version: 0.0.5(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       '@minecraft/server':
         specifier: 2.9.0-beta.1.26.31-stable
-        version: 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
+        version: 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)
       '@minecraft/server-ui':
         specifier: 2.2.0-beta.1.26.31-stable
-        version: 2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+        version: 2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
     devDependencies:
       '@mbler/mcx-component':
         specifier: 0.0.1
-        version: 0.0.1(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+        version: 0.0.1(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       '@mbler/mcx-core':
-        specifier: 0.1.3-rc.10
-        version: 0.1.3-rc.10(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+        specifier: 0.1.3-rc.11
+        version: 0.1.3-rc.11(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       '@mbler/mcx-types':
         specifier: ^0.0.4-rc.6
-        version: 0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+        version: 0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       cross-env:
         specifier: ^10.1.0
         version: 10.1.0
       mbler:
         specifier: ^0.2.12-rc.1
-        version: 0.2.12-rc.1(@mbler/mcx-core@0.1.3-rc.10(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(rolldown@1.2.1)(typescript@5.9.3)
+        version: 0.2.12-rc.1(@mbler/mcx-core@0.1.3-rc.11(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@volar/typescript@2.4.28)(rolldown@1.2.3)(typescript@5.9.3)
       mcx-tsc:
         specifier: 0.0.2-rc.1
-        version: 0.0.2-rc.1(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))(@minecraft/vanilla-data@1.26.33)(@volar/language-service@2.4.28)(rolldown@1.2.1)(rollup@4.59.0)(typescript@5.9.3)
+        version: 0.0.2-rc.1(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))(@minecraft/vanilla-data@1.26.40)(@volar/language-service@2.4.28)(rolldown@1.2.3)(rollup@4.59.0)(typescript@5.9.3)
       rolldown:
         specifier: ^1.1.0
-        version: 1.2.1
+        version: 1.2.3
 
 packages:
 
@@ -59,8 +59,8 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/parser@7.29.7':
-    resolution: {integrity: sha512-hnORnjP/1P/zFEndoeX+n+t1RwWRJiJpM/jO7FW32Kn9r5+sJB2JWOdYo4L6k78j15eCwY3Gm/7364B1EMwtNg==}
+  '@babel/parser@7.29.8':
+    resolution: {integrity: sha512-E8lTAYNB1KW+FH+VGJuZM1ioAx2E6oVlvQFRrf5P8ZZmsiJXYAD9vTFV7yyEURNzgh1dFqMZuO6tUwcARbqFCA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -68,18 +68,9 @@ packages:
     resolution: {integrity: sha512-0ZrskXVEHSWIqZM/sQZ4EV3jZJXRkio/WCxaqKZP1g//CEWEPSfeZFcms4XeKBCHU0ZKnIkdJeU/kF+eRp5lBg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.29.7':
-    resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
+  '@babel/types@7.29.8':
+    resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
-
-  '@emnapi/core@2.0.0-alpha.3':
-    resolution: {integrity: sha512-AZypUeJ/yByuxyS7BlSNRDOMLMlROYtjYdIAuBmJssVz1UJDSeYxLrdizhXCFYhedC5bqd/ASy8EuNXbVVXp9g==}
-
-  '@emnapi/runtime@2.0.0-alpha.3':
-    resolution: {integrity: sha512-hFPAhMUjJD9BSyCANEISPOogeXC9Zo9ZQl7L6vKnaVsMkCtzznaW/naYypeyl0Gv5rYfWYsZbpixTMpjDJzQeA==}
-
-  '@emnapi/wasi-threads@2.0.1':
-    resolution: {integrity: sha512-9DsSk+o5NBX0CCJT8s0EROGSGxjR/tKu6aBTaVyq+SjAEQH4XcdcRxPBRzsBLizTTJ49MJjF+jgu3qnO9GLQcQ==}
 
   '@epic-web/invariant@1.0.0':
     resolution: {integrity: sha512-lrTPqgvfFQtR/eY/qkIzp98OGdNJu0m5ji3q/nJI8v3SXkRKEnWiOxMmbvcSoAIzv/cGiuvRy57k4suKQSAdwA==}
@@ -111,8 +102,8 @@ packages:
       rolldown: 1.0.0-rc.18
       rollup: 4.59.0
 
-  '@mbler/mcx-core@0.1.3-rc.10':
-    resolution: {integrity: sha512-M9VNewTZkxbwgOoQ4NFF/YeY2027rFYhRUUCzN/axisvO9IkIzir78VBLtTCNh68wkZE83lyYSTlg7XH4NFeyQ==}
+  '@mbler/mcx-core@0.1.3-rc.11':
+    resolution: {integrity: sha512-y34qmSw9ULw8gfHYAXR/riF9JqBXz0C6y6KEMd4Z6Eep5lwif+lQBq25E/cOyqAVsQpzcaG3RAwvuiqjg9a/QA==}
 
   '@mbler/mcx-server@0.1.3':
     resolution: {integrity: sha512-jqyceCU1X14R2NXIuiKX7STng+YaGMG9ZBm4MN0ClWRtMJvziYw+8rYqvDoFckMvJaKIqpWbX7YhP+jhs3PJ7Q==}
@@ -126,13 +117,6 @@ packages:
   '@mbler/mcx-types@0.0.4-rc.3':
     resolution: {integrity: sha512-IpWsQUd7qI5T8pW2/cX6Jl9oDv19pmM1m5vo7jvL3xrlMFUEvjN8Xj5r2FsaIQD3PnSK4Ts2jn8I+bNNAuV+SQ==}
     engines: {node: '>=20'}
-
-  '@mbler/mcx-types@0.0.4-rc.5':
-    resolution: {integrity: sha512-LeOyp+APyx3VE2tbgPpkUy3zAugX0EOoHCoXcMdDk7/JcyklOkvM7fOtAKRtIlrDou9xGawbz2EC10HFIKUovA==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@minecraft/server': ^2.6.0
-      '@minecraft/server-ui': ^2.0.0
 
   '@mbler/mcx-types@0.0.4-rc.6':
     resolution: {integrity: sha512-ZEGU84w6K506+B1CHqFe1YoFilijf9HUFRaw5IE2Q03bYol+kXAT23QoRKlTV5vEjGK6dGxk4sr0ZRKh/8U5FA==}
@@ -187,109 +171,98 @@ packages:
       '@minecraft/common': ^1.2.0
       '@minecraft/vanilla-data': '>=1.20.70'
 
-  '@minecraft/vanilla-data@1.26.33':
-    resolution: {integrity: sha512-lYJCYHg12BRTQULjvo00eKVWzj7Und7WEBCUORTRfESylITVaiqJ0jPpVEKsmTu68gKKelGxk4ua8BU/1R/X0A==}
+  '@minecraft/vanilla-data@1.26.40':
+    resolution: {integrity: sha512-6CKqzKXmTaQOKofuTPiJVE5SqFXs8nRTHDujvL77rT/9cRArsdzagRcPFBcbhL8MnGjsINXxkdqFnjUqhZjxsA==}
 
-  '@napi-rs/wasm-runtime@1.2.2':
-    resolution: {integrity: sha512-JfB4kuJQjaoHuCTseIINHtHWeJnvgEcxjwA5t/Y00ZgaOO1Crz3fjT/p8kT28zA/Caz7oiUMn3d6H2yOVCVwuw==}
-    engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
-    peerDependencies:
-      '@emnapi/core': ^1.7.1 || ^2.0.0-alpha.3
-      '@emnapi/runtime': ^1.7.1 || ^2.0.0-alpha.3
+  '@oxc-project/types@0.143.0':
+    resolution: {integrity: sha512-u6JZdLBTLotrNC9Vd6vPssINdzcCzleKAH6EJKImQb7GtYvX5keN2dxkoK44stCc4tffE6QQRtZTXVSzsLUlWA==}
 
-  '@oxc-project/types@0.142.0':
-    resolution: {integrity: sha512-7W+2q5AKQVU36fkaryontrHn3YDt1RyUYXatw9i5H8ocYe2sPKSFB6eS8WNPeRKiN1qAWWZUPm7gwFzJGrccqQ==}
-
-  '@rolldown/binding-android-arm64@1.2.1':
-    resolution: {integrity: sha512-02hOeOSryYxVrOIphmLAsqnCJWxwlzFk+pEt/N/i6OgT3lShHO7xGCU5cpgchRDHboAEbSjzgGh+O/u1GswQmA==}
+  '@rolldown/binding-android-arm64@1.2.3':
+    resolution: {integrity: sha512-zrJtHDcaZJ1Fp7xf4hNl+7seH9Cn/N5TwLYkhgXREtBwAd/jaqW3uqeHxpDugJLVICWg4eW44kOQEGJ1r6jCGw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [android]
 
-  '@rolldown/binding-darwin-arm64@1.2.1':
-    resolution: {integrity: sha512-fMsTOnN0OjFm3CyppWPitKnc8UlliVARUULW6cfU6AIqjdtgmSFWSk9vecHzZduv/yMWIHDlRhM1e8Iff9uAfA==}
+  '@rolldown/binding-darwin-arm64@1.2.3':
+    resolution: {integrity: sha512-ieIiibVCp0tX7TLu2cafoNPv8wJyYi01ekXpbf8q2j7F4rGAhhXb/eQh7ge9DRBY78GwmRQtvjZDux7EDbA8kA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [darwin]
 
-  '@rolldown/binding-darwin-x64@1.2.1':
-    resolution: {integrity: sha512-1wjKdz/XLGKHaTNHjQveQ/B23TKx4ItAqm1JbyVuvNPc4Ze0Fb48s49TAd/2zcplPl8okE/UbTgmlVfwT7eFeQ==}
+  '@rolldown/binding-darwin-x64@1.2.3':
+    resolution: {integrity: sha512-Zh9tCon19eDXJoihx0rqKhMUlMYqzwj3aPsSuHmI4RWZh62dWUL+DJN4C5YQya5TcQBJU/Fe8+rY0jhXTQITqA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [darwin]
 
-  '@rolldown/binding-freebsd-x64@1.2.1':
-    resolution: {integrity: sha512-Fa0jHR07E7YBN4vOEsbVf2briYNsuOowfLJaXULZM0ldMlaCaj2LJgLMbMe4iacRyZmvR8efFhgR9wKuGclQUg==}
+  '@rolldown/binding-freebsd-x64@1.2.3':
+    resolution: {integrity: sha512-nGbJWewA1wrXXZiQhjAT5rhibGfns5ZNkDVqxsO6zJ3f3YvpoDNNmGMSbbhLuXKjNScaBJVOAboztAWVespQMg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [freebsd]
 
-  '@rolldown/binding-linux-arm-gnueabihf@1.2.1':
-    resolution: {integrity: sha512-pzkgu1SSHGgRRyRZ4fbmSgmajbVt+epaLP99NDjFft69v/ypfTi6swBMiVdh2EkQ0OSnHE1lZDM7DRGkyAzUpA==}
+  '@rolldown/binding-linux-arm-gnueabihf@1.2.3':
+    resolution: {integrity: sha512-QNniJr5Kml0kDEB98jiDOJjXNroxIIi0IXIbdYzY26Xt1pVbeP62+KnoIZLwirOymX/0jDk/2gI/bNUv7A7OIw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm]
     os: [linux]
 
-  '@rolldown/binding-linux-arm64-gnu@1.2.1':
-    resolution: {integrity: sha512-QI5SEDY8cbiYWHx0VO4vIc3UlS6a32vXHjU8Qy/17adEmZIPuByJg13UEvo9c/UCiUkdcVWY83C+b+JrwnNyUg==}
+  '@rolldown/binding-linux-arm64-gnu@1.2.3':
+    resolution: {integrity: sha512-TkqEAcmmvH3I/q4114NB4RVt6241Dao48pF45uLcFGrwAaIn0iITgTAKP/dLjbN0R4buJjGb91+UHSoFmpgIWw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@rolldown/binding-linux-arm64-musl@1.2.1':
-    resolution: {integrity: sha512-Sm41FyCeXqmYcERoYOCbGIL5hNfd8w9LQ7Y61Bev48HkcjaJqV/iiVOaiDxjVTRMS+QKrZmD8cfPt4uMVnvM+A==}
+  '@rolldown/binding-linux-arm64-musl@1.2.3':
+    resolution: {integrity: sha512-NHqjnxpsndf4MPymxteFAWHHfkTL8HjWh1KB7z23ofZ6QO2euONuxDXjat69dKZRALnGypg8k8SsK8vZJoXv1Q==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@rolldown/binding-linux-ppc64-gnu@1.2.1':
-    resolution: {integrity: sha512-2x+WhXTGl9yJYPbltW/BSEPTVz9OIWQyER4N+gJEDWkkn904eRcBzELqh/Hf7K0w/ubGbKNMv0ZC+94QK/IFEg==}
+  '@rolldown/binding-linux-ppc64-gnu@1.2.3':
+    resolution: {integrity: sha512-6tbrbwfz5GB9DQ4Jwo6hy9v+vR31xZlvzZ6n5Xut6Hhx5PvrA9q/HsK8KMaYQp063iqZGXwNvZtYNLD7EM/x0w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [ppc64]
     os: [linux]
     libc: [glibc]
 
-  '@rolldown/binding-linux-s390x-gnu@1.2.1':
-    resolution: {integrity: sha512-eEjmQpuRQayHPWWnywaWHkFT3ToPbP3RYy42VVd/B9aBGDA+Ol25EIWHxKQST3IiWJjikCWUF7KtbfqwZrzVwQ==}
+  '@rolldown/binding-linux-s390x-gnu@1.2.3':
+    resolution: {integrity: sha512-oyuXxXmoZHjXC917IAPFAAv4wWAa0cM9afk8nx1+9/jNNOX1uPf8yDA6p7G0RypOfw/X0PQt5IfoquY1um+zSg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [s390x]
     os: [linux]
     libc: [glibc]
 
-  '@rolldown/binding-linux-x64-gnu@1.2.1':
-    resolution: {integrity: sha512-/Orga1fZYkLc/56jBICcHrKchl8Z2UKdDSr3LG9ToWO1lQ6a4Livk9Xz+9WN91zsz5QR3XQz2NNoSDEvP6qadw==}
+  '@rolldown/binding-linux-x64-gnu@1.2.3':
+    resolution: {integrity: sha512-TytMwF2KVGqP2tgd0I1OY0PAv78dZRAYcF5ssDzjM34SUXCED3uXvSd5+lHoC0bTD6eEdFz7LdQNCO1y0oVk9w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@rolldown/binding-linux-x64-musl@1.2.1':
-    resolution: {integrity: sha512-xxBJRL+0q0Kce7orznGWLuylHDY65vuARXZRpX+hPdv+DqK2c3NlCsVA98tlWzWNEE7yPqA/1NQ5nnCrj49Y5A==}
+  '@rolldown/binding-linux-x64-musl@1.2.3':
+    resolution: {integrity: sha512-/E9m3qstrJFVPoULV25mVQblSNExY2+kBsYe4sy0Tn0yOOgJ8wZbZt3KnRbF/XeU2Gl1STKUQnDNTqhIE5MD4A==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@rolldown/binding-openharmony-arm64@1.2.1':
-    resolution: {integrity: sha512-M6AdXIXw3s+/8XpKMzdGDEXGS1S7kwUsy+rcTIUIOx5Ge4nXKCtAFHFV9YKkXvGcC5WMoTjAteLzlsQROVI0Yw==}
+  '@rolldown/binding-openharmony-arm64@1.2.3':
+    resolution: {integrity: sha512-Kr0OcsoQI816i6HOl3vFHpd1K0eZyh76zgfj4c1nTyaTsd5r2Mj1lwM4R90y/qaCfmTn9eHy0SKwi98eitRxug==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [openharmony]
 
-  '@rolldown/binding-wasm32-wasi@1.2.1':
-    resolution: {integrity: sha512-/TX0SoRGojHzSAHpfVBbavRVSazg5U3h3Y3VXfcc0cdugq6kxdqw8LPGFiPr+/7gE/60zRcsOY2Vi9b9eT0jww==}
-    engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
-
-  '@rolldown/binding-win32-arm64-msvc@1.2.1':
-    resolution: {integrity: sha512-EvRrivJieyHG+AO9lleZWgq+g0+S7oV2C51yuqlcyU/R9net+sI4Pj0F+lUoP2bEr6TWX3SqFaaS0SzfLxSzkw==}
+  '@rolldown/binding-win32-arm64-msvc@1.2.3':
+    resolution: {integrity: sha512-hOtMwTqnME+/gJcH/PCZ0wn0zPUjiWOgkHpxbSJpfGKMezHltx1S7/k1SitzVa7Ww2cqrDDaFbZEhcJZO8o+Jw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [win32]
 
-  '@rolldown/binding-win32-x64-msvc@1.2.1':
-    resolution: {integrity: sha512-Z4eCmn5QJ/5+azF9knpLWKfVd9aidn0mAe9TpJgvBLId9Ax3t0+JVxBmT25Bv7NBbVW1TZyKjQjQReouMeH5UQ==}
+  '@rolldown/binding-win32-x64-msvc@1.2.3':
+    resolution: {integrity: sha512-ekcqMMkI2PlhYnfzQnB/cEdYUVVJViWvoUyLrbzgDoi3Snfc1mVBwdnc306ufA5ejy8JSPjT2RlW1nQSjW7efg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [win32]
@@ -435,9 +408,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tybys/wasm-util@0.10.3':
-    resolution: {integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==}
-
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
@@ -456,20 +426,158 @@ packages:
   '@volar/typescript@2.4.28':
     resolution: {integrity: sha512-Ja6yvWrbis2QtN4ClAKreeUZPVYMARDYZl9LMEv1iQ1QdepB6wn0jTRxA9MftYmYa4DQ4k/DaSZpFPUfxl8giw==}
 
-  '@vue/compiler-core@3.5.40':
-    resolution: {integrity: sha512-39E8IgOhTbVDnoJFMKc2DvYnypcZwUqgUhQkccva/0m6FUwtIKSGV7n1hpVmYcFaoRAwf9pBcwnKlCEsN63ZEQ==}
+  '@vue/compiler-core@3.5.41':
+    resolution: {integrity: sha512-q0Xtv/F9w2YO/7htQhtiL+Ev2WCJbe5N2hc+XfgyKkEKqWpSxknmT8QOuGdEKNdjPq0c3F7rNpFkTo3Kfrm7pg==}
 
-  '@vue/compiler-dom@3.5.40':
-    resolution: {integrity: sha512-pwkx4vqlqOspFstrcmzwkKLePVMD3PT65imRzLhanU2V1Fj4K13g6OXjanOyzw3aTAuRk84BOmY8f3rEHqPaVA==}
+  '@vue/compiler-dom@3.5.41':
+    resolution: {integrity: sha512-oKacVfNglLvGjnS6BXOlGL7EyG2h8X03pqXCjzotRZUaXGjbrTJUnVAQjrCqUnS+lyu31nwQjZY/d817GmCnfw==}
 
-  '@vue/compiler-sfc@3.5.40':
-    resolution: {integrity: sha512-gIf497P4kpuALcvs5n3AEg1Vdn0pSY4XbjASIfHNYF1/MP3T2Mf2STERTubysBxCRxzJGJYtF/O7vwJrxFB3Vw==}
+  '@vue/compiler-sfc@3.5.41':
+    resolution: {integrity: sha512-XJhip7R2wy6vX3knCxdZN4KracFaZUef58s1KYewqluedHIJaPIVfXoYT7MF1F8nCvv6k8bWWxDC8opMkg1VTQ==}
 
-  '@vue/compiler-ssr@3.5.40':
-    resolution: {integrity: sha512-rrE5xiXG663+vHCHa3J9p2z5OcBRjXmoqenprJxAFQxg5pSshzeBiCE6pu46axapRJ2Adk0YDA2BRZVjiHXnhg==}
+  '@vue/compiler-ssr@3.5.41':
+    resolution: {integrity: sha512-U3v5OejKEGqOI0Wy0+Sz7hGuIFZHA4LSXzrNM3IMIeDyJEBBfTpX26n3SDgToRpP2bLc9FfI2j/kSgcJ8Emq5A==}
 
-  '@vue/shared@3.5.40':
-    resolution: {integrity: sha512-WxnBtruIqOoV3rA4jeKDWzrYI5h7Cp4+pjwDi8kWGHz+IslhiN+wguLVVhtv2l8VoU02rzDCVfDjgCl1lNpZVg==}
+  '@vue/shared@3.5.41':
+    resolution: {integrity: sha512-IOnwSCma8j+9xJT6b8H0dEYidC80NsYmNMlZxRsukYcSoGaDBohog5hDxzeUXdFeGWFA++vWvxqOmrr96VlqMA==}
+
+  '@yuku-codegen/binding-android-arm64@0.8.3':
+    resolution: {integrity: sha512-/EKnnqwvN7xYoVDhQEIEJTdPDwGW1wkFz/2Eku3ES/IJd4lcQh/OaIDFBmoJKvpe12enrb1TIoYh1fxasGXolA==}
+    cpu: [arm64]
+    os: [android]
+
+  '@yuku-codegen/binding-darwin-arm64@0.8.3':
+    resolution: {integrity: sha512-DFAOliF5YIPv3ayNHGOJhIun6Af4kMaL/YXxf8ZtD1qrOIMFnX/AQBhwfvLalhwmmxuGA8AUteaKRHBvdKZFVA==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@yuku-codegen/binding-darwin-x64@0.8.3':
+    resolution: {integrity: sha512-WlMh4/oEibaTzE9j5Zq8qnsrH4Ii4kWdcDv/Pj2Rb/MYSrKghtg+bxbWpPe/6zJD21p9zZBApQUxl8ECpZOJuQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@yuku-codegen/binding-freebsd-x64@0.8.3':
+    resolution: {integrity: sha512-hoDOpPP0FTxPSD+6w0Gs4p8iL1yXe6jjIXcdzNxyT1KE6B3JI6O0gTIWQISJ+8QyNpNjIwBb7nHCdRavktJM6A==}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@yuku-codegen/binding-linux-arm-gnu@0.8.3':
+    resolution: {integrity: sha512-nNW0GGMJyF04pK4A7Kq7WAYtUWU9uI5ugDAoXl9yHpd3IIZ8UI+zFlM01e+ZGWnQcdxYYLumeRe/EjzZT9bVfQ==}
+    cpu: [arm]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-codegen/binding-linux-arm-musl@0.8.3':
+    resolution: {integrity: sha512-/jpxKhO8AV5TmXgT3R2Gv3YctKRUhyDzd5bQw8TiJ3O4z7qerHzoW2kE40fPAO3L434/IZtZbdhr8HuOqiwECA==}
+    cpu: [arm]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-codegen/binding-linux-arm64-gnu@0.8.3':
+    resolution: {integrity: sha512-CYhLJfnCknabfLvUjsanxC5s3BBtZHUwfzdDL7GcqShIRQh2qqgG7pPfFrFJ6Jp56kkjKXkfluFGn9nnIv0nZg==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-codegen/binding-linux-arm64-musl@0.8.3':
+    resolution: {integrity: sha512-c6gEdnI0MgA7/rVw6CACMciSbAcxVwLyD/jSBbMLWUeqqbysCNGrGPAHdpSaadpz3W1bd+OdXt9XWjfm66708w==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-codegen/binding-linux-x64-gnu@0.8.3':
+    resolution: {integrity: sha512-CRVZ9Rw5lIah/PpWeShWv7XiUCMY15N6rZRA2sEZrQvc5Az7Dv9/wsDMa6oBMkfQLXuDkFo4G1QOYyWbebjejg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-codegen/binding-linux-x64-musl@0.8.3':
+    resolution: {integrity: sha512-G12Nhecjmv7OlbCX6Y4HU4wYYePd111kTE+yTjbitnt+P3m8bNegtYG4ZGo4scGTq8cKsLF4xcda1XNzCUA6nQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-codegen/binding-win32-arm64@0.8.3':
+    resolution: {integrity: sha512-i8bpXWaMlik9DvFl+89emEx3RZFtSd21Vlt0UrnPvUC7h8NGElP2SwQcdcG+pPmihFIYJAoIuJLw7YdQcFcDkA==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@yuku-codegen/binding-win32-x64@0.8.3':
+    resolution: {integrity: sha512-vlYymeTSsx+qxZoNvdl6KehgYDaQC4Sk/9KUnM3V2mriyCwSdhW7lqdpQGl+RLGsDTxyuRGjzGIjgRWk3lohmA==}
+    cpu: [x64]
+    os: [win32]
+
+  '@yuku-parser/binding-android-arm64@0.8.3':
+    resolution: {integrity: sha512-vySYRsMeul9ssvxeHdxgS9ZUIcq7gqljWNqgokjJE0uQWvVvOprihJ6hOsiifVqWsla0BMc3vAFBvNS9QqCw7g==}
+    cpu: [arm64]
+    os: [android]
+
+  '@yuku-parser/binding-darwin-arm64@0.8.3':
+    resolution: {integrity: sha512-+wpB/wqhiZ685Y77I+lj6v9pHSAJ3Y+QMHJmvch0Q0ahIMbNwtKk3s54MhtjCMKO1qpjPbyN/PjuHDg2hbKaVQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@yuku-parser/binding-darwin-x64@0.8.3':
+    resolution: {integrity: sha512-jKqiWejj4zVy7pPtEGu4/Ty+pG1h7ooQOXIkm7shKZTSwTU9X8X+eoH11uIeKHZi2SQWV0GhNz0J56eerseysQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@yuku-parser/binding-freebsd-x64@0.8.3':
+    resolution: {integrity: sha512-FC7zSwzFzd4z9bsId07CiHLR+Iw6yW/LzIQhL5AUtPUuVXLgEyx0rilgbRUYkl1CT3GJcLpkh63WuPZUSgCDzw==}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@yuku-parser/binding-linux-arm-gnu@0.8.3':
+    resolution: {integrity: sha512-So61j88b9/ygDnUPlWCm1EUPw4HSxAyDjrNHKgud5N3aRDQ3kw94nW7TriXbo7GBXID9oBHCMNm1r1Fof/Df5Q==}
+    cpu: [arm]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-parser/binding-linux-arm-musl@0.8.3':
+    resolution: {integrity: sha512-Nmnn20yJvSSKL8ZdtqReBRSGCDkSMqR5jEk/Sk/cdIdZmqVD49Z6M7w2GbMjdrxMI1MBPbsWFMMWxa93cd5t5g==}
+    cpu: [arm]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-parser/binding-linux-arm64-gnu@0.8.3':
+    resolution: {integrity: sha512-Lfgw7AXJ0rxu6BMPGgfc8HLJWEIr8BHhCzcQp/75k+NM90uCLkHlBNqIg/K42KlSvBgAvu9euOvjdswib+4qJA==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-parser/binding-linux-arm64-musl@0.8.3':
+    resolution: {integrity: sha512-cfRyu87xsJ0tFkHNsnMC4Rq6+xsFJ6i2dc4VAH52d2qLvykEJU/Mdi3ul1O2PyOApX/LoLT3uQZ0fWs3D5XE4w==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-parser/binding-linux-x64-gnu@0.8.3':
+    resolution: {integrity: sha512-GcQQCUuYxbm6P1n+io/A50rvWKDeWHutIp6rW0ycDOZuEQjOb8hDVgS88+NDyOnd9FfS0/Z6GXopcRFDyKpzOg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@yuku-parser/binding-linux-x64-musl@0.8.3':
+    resolution: {integrity: sha512-rMkImBGZzg7GZlj8krYtdiezyjYI4igjKWMut5T65jHyNWFigMQrEpn9mDIBflloW9FKhGE3mN6yTZ/N+4HRwg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@yuku-parser/binding-win32-arm64@0.8.3':
+    resolution: {integrity: sha512-/2Pl2cAzCXWxah8FqJapEj/ikpt9cEutEZFCa0hnbfrshkn5+C+aBM3ZDq62d1jsgQjBMmqr5HVhJUA4OAG/Tg==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@yuku-parser/binding-win32-x64@0.8.3':
+    resolution: {integrity: sha512-Ntnvjoan9jnfLhn7Kn3h8j/bhsbVdQSVmKUqFULKtmwImLCJVHOJbLL4qbEJyrOQ7r/FBL1/c/dRvx/AQWzzXg==}
+    cpu: [x64]
+    os: [win32]
+
+  '@yuku-toolchain/types@0.8.3':
+    resolution: {integrity: sha512-9LN3HYs3A9qSPVFunsxlbfwBcUgexti3TmhOzIxB/UH8zFuaHQJXTRDcN17DW6cp1GsyZtiZA7f18uIra36Jag==}
+
+  '@yuku-toolchain/types@0.8.4':
+    resolution: {integrity: sha512-p7JE8flrj7ijZ/qLjHi4UwKqMarMD6zumbKXhrjp2I2iLJOuTYiQyci2U36VlXcUlNyzsY7E/mLnKCHotbzJVw==}
 
   adm-zip@0.6.0:
     resolution: {integrity: sha512-XleryMhbuksdKtofnWZ9Sk+4CUTbms4Mb/EU32SZwToAyZ5RgVos/ki8n+yr0LWHOGKuakbXTuuYNHLQjhddgg==}
@@ -492,6 +600,15 @@ packages:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
+  dts-resolver@3.0.0:
+    resolution: {integrity: sha512-1T1f+z+4tl9XD+m+0HBgWoL/nm0bOIffyWaUuUSBlFg/86IWvfx+wjNaO/ybU0AJzG9/Mi5hBUgGV6zCmWEN7Q==}
+    engines: {node: ^22.18.0 || >=24.0.0}
+    peerDependencies:
+      oxc-resolver: '>=11.0.0'
+    peerDependenciesMeta:
+      oxc-resolver:
+        optional: true
+
   entities@7.0.1:
     resolution: {integrity: sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==}
     engines: {node: '>=0.12'}
@@ -503,6 +620,10 @@ packages:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+
+  get-tsconfig@5.0.0-beta.5:
+    resolution: {integrity: sha512-/6gFNr0N04nob252sTQxyFLi3eKFRqIg1I87YcqAMT1i6SQrSF6KujUEQrtrjMV0H/eejTCltLdDSTEMzHbnsQ==}
+    engines: {node: '>=20.20.0'}
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
@@ -524,8 +645,8 @@ packages:
       rolldown: ^1.2.0
       typescript: ^5.9.3
 
-  mcbe-brarchive-ts@0.1.2:
-    resolution: {integrity: sha512-dr3o+uq12tsEMnw9FpOZ3NNwHLn9RNDRcFldNt1CXNoiXVioWXtVqzHaqqly8V2n47IjObD9lw6PI0bGg4MQNQ==}
+  mcbe-brarchive-ts@0.1.3:
+    resolution: {integrity: sha512-7gy1xFuuDiXbQZ1s19HrVHgZhxGM6dT9nq8W/aeWwODmPp1oFHQLGSx7AProrTJDfasEEYb0TjUrFAPUvVmhiQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -536,10 +657,14 @@ packages:
     peerDependencies:
       typescript: ^5.9.3
 
-  nanoid@3.3.16:
-    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
+  nanoid@3.3.17:
+    resolution: {integrity: sha512-xQLf0A3HOMlgHq0n247/LRuAOYmB7dXJ/DvAxGvsSBij45XtBSmQycu+F8ODbHwns/XyFZagyL1+J0Offw1E0g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  obug@2.1.4:
+    resolution: {integrity: sha512-4a+OsYv9UktOJKE+l1A4OufDgdRF9PifWj+tJnHURo/P+WOxpG4GzUFL9qCalmWauao6ogiG+QvnCovwPoyAWA==}
+    engines: {node: '>=12.20.0'}
 
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
@@ -551,19 +676,41 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
-  postcss@8.5.25:
-    resolution: {integrity: sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw==}
+  postcss@8.5.26:
+    resolution: {integrity: sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  readdirp@5.0.0:
-    resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
+  readdirp@5.1.1:
+    resolution: {integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==}
     engines: {node: '>= 20.19.0'}
 
   request-light@0.7.0:
     resolution: {integrity: sha512-lMbBMrDoxgsyO+yB3sDcrDuX85yYt7sS8BfQd11jtbW/z5ZWgLZRcEGLsLoYw7I0WSUGQBs8CC8ScIxkTX1+6Q==}
 
-  rolldown@1.2.1:
-    resolution: {integrity: sha512-4FKJhg8d3OiyQOA6Q1Q0hoFFpW9/OoX+VsHzpECsdsIZoOArrAK90gl59YK/Z+gnDel45bgJZK03ozH/9bCqEw==}
+  resolve-pkg-maps@1.0.0:
+    resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
+
+  rolldown-plugin-dts@0.28.0:
+    resolution: {integrity: sha512-Ip/B9B0IK3OLBj0tl59yAfQgbHBicLE5GQ04+6eJoniZ1HKNCpf49NzmBC4SfIg1cIvKr0n0mUQe8mG6UrJHbw==}
+    engines: {node: ^22.18.0 || ^24.11.0 || >=26.0.0}
+    peerDependencies:
+      '@typescript/native-preview': '*'
+      '@volar/typescript': ~2.4.0
+      rolldown: ^1.2.0
+      typescript: ^5.0.0 || ^6.0.0 || ~7.0.0
+      vue-tsc: ~3.2.0 || ~3.3.0
+    peerDependenciesMeta:
+      '@typescript/native-preview':
+        optional: true
+      '@volar/typescript':
+        optional: true
+      typescript:
+        optional: true
+      vue-tsc:
+        optional: true
+
+  rolldown@1.2.3:
+    resolution: {integrity: sha512-rn9wpmxplLf7NLNyCk9FyWh3FM43DbY8jOzCdEPzH7uflhTftRbCEpqi6Ly2osgoU8OwObtmavMbWLaWy4LX7A==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -588,9 +735,6 @@ packages:
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
-
-  tslib@2.8.1:
-    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
   typescript-auto-import-cache@0.3.6:
     resolution: {integrity: sha512-RpuHXrknHdVdK7wv/8ug3Fr0WNsNi5l5aB8MYYuXhq2UH5lnEB1htJ1smhtD5VeCsGr2p8mUDtd83LCQDFVgjQ==}
@@ -646,6 +790,15 @@ packages:
     engines: {node: '>= 8'}
     hasBin: true
 
+  yuku-ast@0.8.3:
+    resolution: {integrity: sha512-8x34yU5uhHUnJXzy2Qvjvec/vE9BzS0/2khVT1MsLmSLO/P8Q1Wp8IxHv+IhD+HMYETk6kherOSvP4JPWw2joQ==}
+
+  yuku-codegen@0.8.3:
+    resolution: {integrity: sha512-okdo5bb+TfebQa4JOjz9QxeT34D6CcBxu8dxaPUdFEKRdLkp+D2Fah2OanepK+XTyPXdmAJzAo9iXvYvZ/5rmg==}
+
+  yuku-parser@0.8.3:
+    resolution: {integrity: sha512-KPQcpF9aj77ywlJBIkQWCQ9DObdxnCA8AJdUOmA5CZZx042Xt4+dvbQmPJfWxF3E+KG5dVAZ2fBKuDJ8VsKWgA==}
+
 snapshots:
 
   '@babel/generator@7.28.5':
@@ -664,35 +817,19 @@ snapshots:
     dependencies:
       '@babel/types': 7.28.6
 
-  '@babel/parser@7.29.7':
+  '@babel/parser@7.29.8':
     dependencies:
-      '@babel/types': 7.29.7
+      '@babel/types': 7.29.8
 
   '@babel/types@7.28.6':
     dependencies:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@babel/types@7.29.7':
+  '@babel/types@7.29.8':
     dependencies:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
-
-  '@emnapi/core@2.0.0-alpha.3':
-    dependencies:
-      '@emnapi/wasi-threads': 2.0.1
-      tslib: 2.8.1
-    optional: true
-
-  '@emnapi/runtime@2.0.0-alpha.3':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
-  '@emnapi/wasi-threads@2.0.1':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
 
   '@epic-web/invariant@1.0.0': {}
 
@@ -710,58 +847,58 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mbler/mcx-component@0.0.0-alpha.2(@minecraft/vanilla-data@1.26.33)':
+  '@mbler/mcx-component@0.0.0-alpha.2(@minecraft/vanilla-data@1.26.40)':
     dependencies:
-      '@mbler/mcx-types': 0.0.4-rc.2(@minecraft/vanilla-data@1.26.33)
+      '@mbler/mcx-types': 0.0.4-rc.2(@minecraft/vanilla-data@1.26.40)
     transitivePeerDependencies:
       - '@minecraft/vanilla-data'
 
-  '@mbler/mcx-component@0.0.1(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))':
+  '@mbler/mcx-component@0.0.1(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))':
     dependencies:
-      '@mbler/mcx-types': 0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+      '@mbler/mcx-types': 0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
     transitivePeerDependencies:
       - '@minecraft/server'
       - '@minecraft/server-ui'
 
-  '@mbler/mcx-core@0.1.2-rc.13(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)(rolldown@1.2.1)(rollup@4.59.0)':
+  '@mbler/mcx-core@0.1.2-rc.13(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)(rolldown@1.2.3)(rollup@4.59.0)':
     dependencies:
       '@babel/generator': 7.28.5
       '@babel/parser': 7.28.5
       '@babel/types': 7.28.6
-      '@mbler/mcx-component': 0.0.0-alpha.2(@minecraft/vanilla-data@1.26.33)
-      '@mbler/mcx-types': 0.0.4-rc.3(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
+      '@mbler/mcx-component': 0.0.0-alpha.2(@minecraft/vanilla-data@1.26.40)
+      '@mbler/mcx-types': 0.0.4-rc.3(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)
       '@volar/language-core': 2.4.28
-      '@vue/compiler-core': 3.5.40
-      '@vue/compiler-sfc': 3.5.40
+      '@vue/compiler-core': 3.5.41
+      '@vue/compiler-sfc': 3.5.41
       magic-string: 0.30.21
-      rolldown: 1.2.1
+      rolldown: 1.2.3
       rollup: 4.59.0
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@minecraft/common'
       - '@minecraft/vanilla-data'
 
-  '@mbler/mcx-core@0.1.3-rc.10(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))':
+  '@mbler/mcx-core@0.1.3-rc.11(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))':
     dependencies:
       '@babel/generator': 7.28.5
       '@babel/parser': 7.28.5
       '@babel/types': 7.28.6
-      '@mbler/mcx-types': 0.0.4-rc.5(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+      '@mbler/mcx-types': 0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       '@volar/language-core': 2.4.28
-      '@vue/compiler-core': 3.5.40
-      '@vue/compiler-sfc': 3.5.40
+      '@vue/compiler-core': 3.5.41
+      '@vue/compiler-sfc': 3.5.41
       magic-string: 0.30.21
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@minecraft/server'
       - '@minecraft/server-ui'
 
-  '@mbler/mcx-server@0.1.3(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))(@minecraft/vanilla-data@1.26.33)(@volar/language-service@2.4.28)(rolldown@1.2.1)(rollup@4.59.0)':
+  '@mbler/mcx-server@0.1.3(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))(@minecraft/vanilla-data@1.26.40)(@volar/language-service@2.4.28)(rolldown@1.2.3)(rollup@4.59.0)':
     dependencies:
-      '@babel/parser': 7.29.7
+      '@babel/parser': 7.29.8
       '@mbler/mcx': 0.0.4-rc.1
-      '@mbler/mcx-core': 0.1.2-rc.13(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)(rolldown@1.2.1)(rollup@4.59.0)
-      '@mbler/mcx-types': 0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+      '@mbler/mcx-core': 0.1.2-rc.13(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)(rolldown@1.2.3)(rollup@4.59.0)
+      '@mbler/mcx-types': 0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       '@volar/language-core': 2.4.28
       '@volar/language-server': 2.4.28
       typescript: 5.9.3
@@ -776,132 +913,113 @@ snapshots:
       - rolldown
       - rollup
 
-  '@mbler/mcx-types@0.0.4-rc.2(@minecraft/vanilla-data@1.26.33)':
+  '@mbler/mcx-types@0.0.4-rc.2(@minecraft/vanilla-data@1.26.40)':
     dependencies:
-      '@minecraft/server': 2.0.0(@minecraft/vanilla-data@1.26.33)
-      '@minecraft/server-ui': 2.0.0(@minecraft/vanilla-data@1.26.33)
+      '@minecraft/server': 2.0.0(@minecraft/vanilla-data@1.26.40)
+      '@minecraft/server-ui': 2.0.0(@minecraft/vanilla-data@1.26.40)
       '@volar/language-core': 2.4.28
     transitivePeerDependencies:
       - '@minecraft/vanilla-data'
 
-  '@mbler/mcx-types@0.0.4-rc.3(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)':
+  '@mbler/mcx-types@0.0.4-rc.3(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)':
     dependencies:
-      '@minecraft/server': 2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
-      '@minecraft/server-ui': 2.2.0-beta.1.26.30-preview.30(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+      '@minecraft/server': 2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)
+      '@minecraft/server-ui': 2.2.0-beta.1.26.30-preview.30(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       '@volar/language-core': 2.4.28
     transitivePeerDependencies:
       - '@minecraft/common'
       - '@minecraft/vanilla-data'
 
-  '@mbler/mcx-types@0.0.4-rc.5(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))':
+  '@mbler/mcx-types@0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))':
     dependencies:
-      '@minecraft/server': 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
-      '@minecraft/server-ui': 2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
-
-  '@mbler/mcx-types@0.0.4-rc.6(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))':
-    dependencies:
-      '@minecraft/server': 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
-      '@minecraft/server-ui': 2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+      '@minecraft/server': 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)
+      '@minecraft/server-ui': 2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
 
   '@mbler/mcx@0.0.4-rc.1': {}
 
-  '@mbler/mcx@0.0.5(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))':
+  '@mbler/mcx@0.0.5(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))':
     dependencies:
-      '@minecraft/server': 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
-      '@minecraft/server-ui': 2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+      '@minecraft/server': 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)
+      '@minecraft/server-ui': 2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
 
   '@minecraft/common@1.3.0': {}
 
-  '@minecraft/server-ui@2.0.0(@minecraft/vanilla-data@1.26.33)':
+  '@minecraft/server-ui@2.0.0(@minecraft/vanilla-data@1.26.40)':
     dependencies:
       '@minecraft/common': 1.3.0
-      '@minecraft/server': 2.0.0(@minecraft/vanilla-data@1.26.33)
+      '@minecraft/server': 2.0.0(@minecraft/vanilla-data@1.26.40)
     transitivePeerDependencies:
       - '@minecraft/vanilla-data'
 
-  '@minecraft/server-ui@2.2.0-beta.1.26.30-preview.30(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))':
+  '@minecraft/server-ui@2.2.0-beta.1.26.30-preview.30(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))':
     dependencies:
       '@minecraft/common': 1.3.0
-      '@minecraft/server': 2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
+      '@minecraft/server': 2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)
 
-  '@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))':
+  '@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))':
     dependencies:
       '@minecraft/common': 1.3.0
-      '@minecraft/server': 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)
+      '@minecraft/server': 2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)
 
-  '@minecraft/server@2.0.0(@minecraft/vanilla-data@1.26.33)':
+  '@minecraft/server@2.0.0(@minecraft/vanilla-data@1.26.40)':
     dependencies:
       '@minecraft/common': 1.3.0
-      '@minecraft/vanilla-data': 1.26.33
+      '@minecraft/vanilla-data': 1.26.40
 
-  '@minecraft/server@2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)':
+  '@minecraft/server@2.9.0-beta.1.26.30-preview.21(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)':
     dependencies:
       '@minecraft/common': 1.3.0
-      '@minecraft/vanilla-data': 1.26.33
+      '@minecraft/vanilla-data': 1.26.40
 
-  '@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)':
+  '@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)':
     dependencies:
       '@minecraft/common': 1.3.0
-      '@minecraft/vanilla-data': 1.26.33
+      '@minecraft/vanilla-data': 1.26.40
 
-  '@minecraft/vanilla-data@1.26.33': {}
+  '@minecraft/vanilla-data@1.26.40': {}
 
-  '@napi-rs/wasm-runtime@1.2.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)':
-    dependencies:
-      '@emnapi/core': 2.0.0-alpha.3
-      '@emnapi/runtime': 2.0.0-alpha.3
-      '@tybys/wasm-util': 0.10.3
+  '@oxc-project/types@0.143.0': {}
+
+  '@rolldown/binding-android-arm64@1.2.3':
     optional: true
 
-  '@oxc-project/types@0.142.0': {}
-
-  '@rolldown/binding-android-arm64@1.2.1':
+  '@rolldown/binding-darwin-arm64@1.2.3':
     optional: true
 
-  '@rolldown/binding-darwin-arm64@1.2.1':
+  '@rolldown/binding-darwin-x64@1.2.3':
     optional: true
 
-  '@rolldown/binding-darwin-x64@1.2.1':
+  '@rolldown/binding-freebsd-x64@1.2.3':
     optional: true
 
-  '@rolldown/binding-freebsd-x64@1.2.1':
+  '@rolldown/binding-linux-arm-gnueabihf@1.2.3':
     optional: true
 
-  '@rolldown/binding-linux-arm-gnueabihf@1.2.1':
+  '@rolldown/binding-linux-arm64-gnu@1.2.3':
     optional: true
 
-  '@rolldown/binding-linux-arm64-gnu@1.2.1':
+  '@rolldown/binding-linux-arm64-musl@1.2.3':
     optional: true
 
-  '@rolldown/binding-linux-arm64-musl@1.2.1':
+  '@rolldown/binding-linux-ppc64-gnu@1.2.3':
     optional: true
 
-  '@rolldown/binding-linux-ppc64-gnu@1.2.1':
+  '@rolldown/binding-linux-s390x-gnu@1.2.3':
     optional: true
 
-  '@rolldown/binding-linux-s390x-gnu@1.2.1':
+  '@rolldown/binding-linux-x64-gnu@1.2.3':
     optional: true
 
-  '@rolldown/binding-linux-x64-gnu@1.2.1':
+  '@rolldown/binding-linux-x64-musl@1.2.3':
     optional: true
 
-  '@rolldown/binding-linux-x64-musl@1.2.1':
+  '@rolldown/binding-openharmony-arm64@1.2.3':
     optional: true
 
-  '@rolldown/binding-openharmony-arm64@1.2.1':
+  '@rolldown/binding-win32-arm64-msvc@1.2.3':
     optional: true
 
-  '@rolldown/binding-wasm32-wasi@1.2.1':
-    dependencies:
-      '@emnapi/core': 2.0.0-alpha.3
-      '@emnapi/runtime': 2.0.0-alpha.3
-      '@napi-rs/wasm-runtime': 1.2.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)
-    optional: true
-
-  '@rolldown/binding-win32-arm64-msvc@1.2.1':
-    optional: true
-
-  '@rolldown/binding-win32-x64-msvc@1.2.1':
+  '@rolldown/binding-win32-x64-msvc@1.2.3':
     optional: true
 
   '@rolldown/pluginutils@1.0.1': {}
@@ -981,11 +1099,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.59.0':
     optional: true
 
-  '@tybys/wasm-util@0.10.3':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
   '@types/estree@1.0.8': {}
 
   '@volar/language-core@2.4.28':
@@ -1019,37 +1132,113 @@ snapshots:
       path-browserify: 1.0.1
       vscode-uri: 3.1.0
 
-  '@vue/compiler-core@3.5.40':
+  '@vue/compiler-core@3.5.41':
     dependencies:
-      '@babel/parser': 7.29.7
-      '@vue/shared': 3.5.40
+      '@babel/parser': 7.29.8
+      '@vue/shared': 3.5.41
       entities: 7.0.1
       estree-walker: 2.0.2
       source-map-js: 1.2.1
 
-  '@vue/compiler-dom@3.5.40':
+  '@vue/compiler-dom@3.5.41':
     dependencies:
-      '@vue/compiler-core': 3.5.40
-      '@vue/shared': 3.5.40
+      '@vue/compiler-core': 3.5.41
+      '@vue/shared': 3.5.41
 
-  '@vue/compiler-sfc@3.5.40':
+  '@vue/compiler-sfc@3.5.41':
     dependencies:
-      '@babel/parser': 7.29.7
-      '@vue/compiler-core': 3.5.40
-      '@vue/compiler-dom': 3.5.40
-      '@vue/compiler-ssr': 3.5.40
-      '@vue/shared': 3.5.40
+      '@babel/parser': 7.29.8
+      '@vue/compiler-core': 3.5.41
+      '@vue/compiler-dom': 3.5.41
+      '@vue/compiler-ssr': 3.5.41
+      '@vue/shared': 3.5.41
       estree-walker: 2.0.2
       magic-string: 0.30.21
-      postcss: 8.5.25
+      postcss: 8.5.26
       source-map-js: 1.2.1
 
-  '@vue/compiler-ssr@3.5.40':
+  '@vue/compiler-ssr@3.5.41':
     dependencies:
-      '@vue/compiler-dom': 3.5.40
-      '@vue/shared': 3.5.40
+      '@vue/compiler-dom': 3.5.41
+      '@vue/shared': 3.5.41
 
-  '@vue/shared@3.5.40': {}
+  '@vue/shared@3.5.41': {}
+
+  '@yuku-codegen/binding-android-arm64@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-darwin-arm64@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-darwin-x64@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-freebsd-x64@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-linux-arm-gnu@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-linux-arm-musl@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-linux-arm64-gnu@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-linux-arm64-musl@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-linux-x64-gnu@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-linux-x64-musl@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-win32-arm64@0.8.3':
+    optional: true
+
+  '@yuku-codegen/binding-win32-x64@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-android-arm64@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-darwin-arm64@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-darwin-x64@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-freebsd-x64@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm-gnu@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm-musl@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm64-gnu@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-linux-arm64-musl@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-linux-x64-gnu@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-linux-x64-musl@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-win32-arm64@0.8.3':
+    optional: true
+
+  '@yuku-parser/binding-win32-x64@0.8.3':
+    optional: true
+
+  '@yuku-toolchain/types@0.8.3': {}
+
+  '@yuku-toolchain/types@0.8.4': {}
 
   adm-zip@0.6.0: {}
 
@@ -1057,7 +1246,7 @@ snapshots:
 
   chokidar@5.0.0:
     dependencies:
-      readdirp: 5.0.0
+      readdirp: 5.1.1
 
   cross-env@10.1.0:
     dependencies:
@@ -1070,12 +1259,18 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
+  dts-resolver@3.0.0: {}
+
   entities@7.0.1: {}
 
   estree-walker@2.0.2: {}
 
   fsevents@2.3.3:
     optional: true
+
+  get-tsconfig@5.0.0-beta.5:
+    dependencies:
+      resolve-pkg-maps: 1.0.0
 
   isexe@2.0.0: {}
 
@@ -1085,22 +1280,35 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  mbler@0.2.12-rc.1(@mbler/mcx-core@0.1.3-rc.10(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(rolldown@1.2.1)(typescript@5.9.3):
+  mbler@0.2.12-rc.1(@mbler/mcx-core@0.1.3-rc.11(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@volar/typescript@2.4.28)(rolldown@1.2.3)(typescript@5.9.3):
     dependencies:
-      '@mbler/mcx-core': 0.1.3-rc.10(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))
+      '@mbler/mcx-core': 0.1.3-rc.11(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))
       adm-zip: 0.6.0
       chokidar: 5.0.0
-      mcbe-brarchive-ts: 0.1.2
-      rolldown: 1.2.1
+      mcbe-brarchive-ts: 0.1.3(@volar/typescript@2.4.28)(rolldown@1.2.3)(typescript@5.9.3)
+      rolldown: 1.2.3
       typescript: 5.9.3
+    transitivePeerDependencies:
+      - '@typescript/native-preview'
+      - '@volar/typescript'
+      - oxc-resolver
+      - vue-tsc
 
-  mcbe-brarchive-ts@0.1.2:
+  mcbe-brarchive-ts@0.1.3(@volar/typescript@2.4.28)(rolldown@1.2.3)(typescript@5.9.3):
     dependencies:
       cac: 7.0.0
+      rolldown-plugin-dts: 0.28.0(@volar/typescript@2.4.28)(rolldown@1.2.3)(typescript@5.9.3)
+    transitivePeerDependencies:
+      - '@typescript/native-preview'
+      - '@volar/typescript'
+      - oxc-resolver
+      - rolldown
+      - typescript
+      - vue-tsc
 
-  mcx-tsc@0.0.2-rc.1(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))(@minecraft/vanilla-data@1.26.33)(@volar/language-service@2.4.28)(rolldown@1.2.1)(rollup@4.59.0)(typescript@5.9.3):
+  mcx-tsc@0.0.2-rc.1(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))(@minecraft/vanilla-data@1.26.40)(@volar/language-service@2.4.28)(rolldown@1.2.3)(rollup@4.59.0)(typescript@5.9.3):
     dependencies:
-      '@mbler/mcx-server': 0.1.3(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.33))(@minecraft/vanilla-data@1.26.33)(@volar/language-service@2.4.28)(rolldown@1.2.1)(rollup@4.59.0)
+      '@mbler/mcx-server': 0.1.3(@minecraft/common@1.3.0)(@minecraft/server-ui@2.2.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40)))(@minecraft/server@2.9.0-beta.1.26.31-stable(@minecraft/common@1.3.0)(@minecraft/vanilla-data@1.26.40))(@minecraft/vanilla-data@1.26.40)(@volar/language-service@2.4.28)(rolldown@1.2.3)(rollup@4.59.0)
       '@volar/language-core': 2.4.28
       '@volar/typescript': 2.4.28
       typescript: 5.9.3
@@ -1113,7 +1321,9 @@ snapshots:
       - rolldown
       - rollup
 
-  nanoid@3.3.16: {}
+  nanoid@3.3.17: {}
+
+  obug@2.1.4: {}
 
   path-browserify@1.0.1: {}
 
@@ -1121,36 +1331,52 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  postcss@8.5.25:
+  postcss@8.5.26:
     dependencies:
-      nanoid: 3.3.16
+      nanoid: 3.3.17
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  readdirp@5.0.0: {}
+  readdirp@5.1.1: {}
 
   request-light@0.7.0: {}
 
-  rolldown@1.2.1:
+  resolve-pkg-maps@1.0.0: {}
+
+  rolldown-plugin-dts@0.28.0(@volar/typescript@2.4.28)(rolldown@1.2.3)(typescript@5.9.3):
     dependencies:
-      '@oxc-project/types': 0.142.0
+      dts-resolver: 3.0.0
+      get-tsconfig: 5.0.0-beta.5
+      obug: 2.1.4
+      rolldown: 1.2.3
+      yuku-ast: 0.8.3
+      yuku-codegen: 0.8.3
+      yuku-parser: 0.8.3
+    optionalDependencies:
+      '@volar/typescript': 2.4.28
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - oxc-resolver
+
+  rolldown@1.2.3:
+    dependencies:
+      '@oxc-project/types': 0.143.0
       '@rolldown/pluginutils': 1.0.1
     optionalDependencies:
-      '@rolldown/binding-android-arm64': 1.2.1
-      '@rolldown/binding-darwin-arm64': 1.2.1
-      '@rolldown/binding-darwin-x64': 1.2.1
-      '@rolldown/binding-freebsd-x64': 1.2.1
-      '@rolldown/binding-linux-arm-gnueabihf': 1.2.1
-      '@rolldown/binding-linux-arm64-gnu': 1.2.1
-      '@rolldown/binding-linux-arm64-musl': 1.2.1
-      '@rolldown/binding-linux-ppc64-gnu': 1.2.1
-      '@rolldown/binding-linux-s390x-gnu': 1.2.1
-      '@rolldown/binding-linux-x64-gnu': 1.2.1
-      '@rolldown/binding-linux-x64-musl': 1.2.1
-      '@rolldown/binding-openharmony-arm64': 1.2.1
-      '@rolldown/binding-wasm32-wasi': 1.2.1
-      '@rolldown/binding-win32-arm64-msvc': 1.2.1
-      '@rolldown/binding-win32-x64-msvc': 1.2.1
+      '@rolldown/binding-android-arm64': 1.2.3
+      '@rolldown/binding-darwin-arm64': 1.2.3
+      '@rolldown/binding-darwin-x64': 1.2.3
+      '@rolldown/binding-freebsd-x64': 1.2.3
+      '@rolldown/binding-linux-arm-gnueabihf': 1.2.3
+      '@rolldown/binding-linux-arm64-gnu': 1.2.3
+      '@rolldown/binding-linux-arm64-musl': 1.2.3
+      '@rolldown/binding-linux-ppc64-gnu': 1.2.3
+      '@rolldown/binding-linux-s390x-gnu': 1.2.3
+      '@rolldown/binding-linux-x64-gnu': 1.2.3
+      '@rolldown/binding-linux-x64-musl': 1.2.3
+      '@rolldown/binding-openharmony-arm64': 1.2.3
+      '@rolldown/binding-win32-arm64-msvc': 1.2.3
+      '@rolldown/binding-win32-x64-msvc': 1.2.3
 
   rollup@4.59.0:
     dependencies:
@@ -1192,9 +1418,6 @@ snapshots:
   shebang-regex@3.0.0: {}
 
   source-map-js@1.2.1: {}
-
-  tslib@2.8.1:
-    optional: true
 
   typescript-auto-import-cache@0.3.6:
     dependencies:
@@ -1244,3 +1467,42 @@ snapshots:
   which@2.0.2:
     dependencies:
       isexe: 2.0.0
+
+  yuku-ast@0.8.3:
+    dependencies:
+      '@yuku-toolchain/types': 0.8.4
+
+  yuku-codegen@0.8.3:
+    dependencies:
+      '@yuku-toolchain/types': 0.8.4
+    optionalDependencies:
+      '@yuku-codegen/binding-android-arm64': 0.8.3
+      '@yuku-codegen/binding-darwin-arm64': 0.8.3
+      '@yuku-codegen/binding-darwin-x64': 0.8.3
+      '@yuku-codegen/binding-freebsd-x64': 0.8.3
+      '@yuku-codegen/binding-linux-arm-gnu': 0.8.3
+      '@yuku-codegen/binding-linux-arm-musl': 0.8.3
+      '@yuku-codegen/binding-linux-arm64-gnu': 0.8.3
+      '@yuku-codegen/binding-linux-arm64-musl': 0.8.3
+      '@yuku-codegen/binding-linux-x64-gnu': 0.8.3
+      '@yuku-codegen/binding-linux-x64-musl': 0.8.3
+      '@yuku-codegen/binding-win32-arm64': 0.8.3
+      '@yuku-codegen/binding-win32-x64': 0.8.3
+
+  yuku-parser@0.8.3:
+    dependencies:
+      '@yuku-toolchain/types': 0.8.3
+      yuku-ast: 0.8.3
+    optionalDependencies:
+      '@yuku-parser/binding-android-arm64': 0.8.3
+      '@yuku-parser/binding-darwin-arm64': 0.8.3
+      '@yuku-parser/binding-darwin-x64': 0.8.3
+      '@yuku-parser/binding-freebsd-x64': 0.8.3
+      '@yuku-parser/binding-linux-arm-gnu': 0.8.3
+      '@yuku-parser/binding-linux-arm-musl': 0.8.3
+      '@yuku-parser/binding-linux-arm64-gnu': 0.8.3
+      '@yuku-parser/binding-linux-arm64-musl': 0.8.3
+      '@yuku-parser/binding-linux-x64-gnu': 0.8.3
+      '@yuku-parser/binding-linux-x64-musl': 0.8.3
+      '@yuku-parser/binding-win32-arm64': 0.8.3
+      '@yuku-parser/binding-win32-x64': 0.8.3
