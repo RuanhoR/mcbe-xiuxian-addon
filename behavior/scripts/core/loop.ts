@@ -26,6 +26,11 @@ export function startLoop() {
   system.runInterval(() => {
     for (const player of world.getAllPlayers()) {
       const level = new PlayerLevel(player);
+      if (level.getLevel().levelRef > 2) {
+        player.addEffect("health_boost", 200, {
+          amplifier: level.getLevel().levelRef * 4,
+        });
+      }
       const breakthroughs = level.breakthroughIfReady();
       for (const b of breakthroughs) {
         player.sendMessage(

@@ -53,7 +53,7 @@ export function hit(event: EntityHitEntityAfterEvent) {
     const player = event.damagingEntity as Player;
     const playerLevelData = new PlayerLevel(player).getLevel();
     if (event.hitEntity.isValid && playerLevelData.levelRef > 1) {
-      event.hitEntity.applyDamage(2 * playerLevelData.levelRef, {
+      event.hitEntity.applyDamage(6 * playerLevelData.levelRef, {
         damagingEntity: event.damagingEntity,
         cause: EntityDamageCause.entityAttack
       })
