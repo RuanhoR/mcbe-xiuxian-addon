@@ -19,7 +19,7 @@ import { PlayerLevel } from "./playerLevel";
  * DanYao (丹药 / pill) system.
  *
  * A pill with id {@link AddonItem.DanYao} goes through these states:
- *   1. Unidentified  - empty lore, name is "未鉴定丹药".
+ *   1. Unidentified  - empty lore, name is the base "丹药".
  *   2. Rolled        - lore equals `§0<levelRef>§r §6<realmName>§r`, the
  *                      realm is hidden in black while the realm name shows.
  *   3. Identified    - a concrete pill of the rolled realm. Its name is written
