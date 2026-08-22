@@ -26,7 +26,6 @@ import SpiritStoneLevel4Icon from "./assets/spirit_stone_level4.png"
 import PuTuanIcon from "./assets/putuan-place.png";
 import DanYaoIcon from "./assets/danyao.png";
 import GongFaIcon from "./assets/gongfa.png"
-import danyaoPng from "./assets/danyao.png";
 function createItem(id: string, icon?: string, maxStack = 64) {
   const item = new ItemComponent({
     components: {},
@@ -58,6 +57,7 @@ DanYao.setFood({
   can_always_eat: true,
 })
 DanYao.setUseAnimation("eat");
+SpiritStoneLevel4.setGlint(true)
 DanYao.setUseModifiers({
   use_duration: 2,
   movement_modifier: 1,
