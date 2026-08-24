@@ -1,5 +1,4 @@
 <script lang="ts">
 import event from "./Event.mcx";
-console.log(Object.keys(event.status.all))
 event.subscribe();
 </script>
