@@ -5,6 +5,7 @@
 </Component>
 <script lang="ts">
 import { BlockComponent } from "@mbler/mcx-component";
+import spiritStonePng from "../assets/spirit_stone_ore.png";
 
 const SpiritStoneOre = new BlockComponent({
   format: "1.26.30",
@@ -15,19 +16,19 @@ SpiritStoneOre.setGeometry("minecraft:geometry.full_block");
 SpiritStoneOre.setLoot("loot_tables/empty");
 
 const materialInstances = {
-  north: { texture: "SpiritStone" },
-  south: { texture: "SpiritStone" },
-  east: { texture: "SpiritStone" },
-  west: { texture: "SpiritStone" },
-  up: { texture: "SpiritStone" },
-  down: { texture: "SpiritStone" }
+  north: { texture: spiritStonePng },
+  south: { texture: spiritStonePng },
+  east: { texture: spiritStonePng },
+  west: { texture: spiritStonePng },
+  up: { texture: spiritStonePng },
+  down: { texture: spiritStonePng }
 };
 SpiritStoneOre.setMaterialInstances(materialInstances);
 
 SpiritStoneOre.setItemVisual({
   geometry: "minecraft:geometry.full_block",
   material_instances: {
-    "*": { texture: "SpiritStone", render_method: "opaque" }
+    "*": { texture: spiritStonePng, render_method: "opaque" }
   }
 });
 
