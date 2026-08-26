@@ -1,0 +1,21 @@
+<Component>
+  <features>
+    <feature id="spirit_stone_ore.json">spiritStoneOreFeature</feature>
+  </features>
+</Component>
+<script lang="ts">
+import { FeatureComponent } from "@mbler/mcx-component";
+
+const spiritStoneOreFeature = new FeatureComponent({
+  format: "1.17.0",
+  identifier: "xian:spirit_stone_ore_feature"
+});
+
+spiritStoneOreFeature.setCount(8);
+spiritStoneOreFeature.addReplaceRule({
+  places_block: "xian:spirit_stone_ore",
+  may_replace: ["minecraft:stone", "minecraft:deepslate"]
+});
+
+export { spiritStoneOreFeature };
+</script>

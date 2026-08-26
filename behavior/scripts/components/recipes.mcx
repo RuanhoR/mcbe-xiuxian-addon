@@ -1,0 +1,84 @@
+<Component>
+  <recipes>
+    <recipe id="xian/putuan.json">putuanRecipe</recipe>
+    <recipe id="xian/spirit_stone_level0.json">ssLevel0To1</recipe>
+    <recipe id="xian/spirit_stone_level1.json">ssLevel1To0</recipe>
+    <recipe id="xian/spirit_stone_level2.json">ssLevel2To3</recipe>
+    <recipe id="xian/spirit_stone_level3.json">ssLevel3To4</recipe>
+    <recipe id="xian/spirit_stone_ore_make.json">spiritStoneOreMake</recipe>
+  </recipes>
+</Component>
+<script lang="ts">
+import { RecipeComponent } from "@mbler/mcx-component";
+
+const putuanRecipe = new RecipeComponent({
+  format: "1.17.0",
+  id: "xian:putuan_recipe",
+  type: "shaped",
+  tags: ["crafting_table"],
+  pattern: [" # ", "#P#", " # "],
+  key: {
+    "#": { item: "minecraft:planks" },
+    P: { item: "minecraft:paper" }
+  },
+  result: { item: "xian:putuan_place" }
+});
+
+const ssLevel1To0 = new RecipeComponent({
+  format: "1.17.0",
+  id: "xian:spirit_stone_level_0",
+  type: "shaped",
+  tags: ["crafting_table"],
+  pattern: [" # ", "# #", " # "],
+  key: { "#": { item: "xian:spirit_stone_level_0" } },
+  result: { item: "xian:spirit_stone_level_1" }
+});
+
+const ssLevel0To1 = new RecipeComponent({
+  format: "1.17.0",
+  id: "xian:spirit_stone_level_1",
+  type: "shaped",
+  tags: ["crafting_table"],
+  pattern: [" # ", "# #", " # "],
+  key: { "#": { item: "xian:spirit_stone_level_1" } },
+  result: { item: "xian:spirit_stone_level_2" }
+});
+
+const ssLevel2To3 = new RecipeComponent({
+  format: "1.17.0",
+  id: "xian:spirit_stone_level_2",
+  type: "shaped",
+  tags: ["crafting_table"],
+  pattern: [" # ", "# #", " # "],
+  key: { "#": { item: "xian:spirit_stone_level_2" } },
+  result: { item: "xian:spirit_stone_level_3" }
+});
+
+const ssLevel3To4 = new RecipeComponent({
+  format: "1.17.0",
+  id: "xian:spirit_stone_level_3",
+  type: "shaped",
+  tags: ["crafting_table"],
+  pattern: [" # ", "# #", " # "],
+  key: { "#": { item: "xian:spirit_stone_level_3" } },
+  result: { item: "xian:spirit_stone_level_4" }
+});
+
+const spiritStoneOreMake = new RecipeComponent({
+  format: "1.12.0",
+  id: "xian:spirit_stone_ore_make",
+  type: "furnace",
+  tags: ["furnace"],
+  input: { item: "xian:raw_spirit_stone_ore" },
+  output: "xian:spirit_stone_level_0"
+});
+
+export {
+  putuanRecipe,
+  ssLevel1To0,
+  ssLevel0To1,
+  ssLevel2To3,
+  ssLevel3To4,
+  spiritStoneOreMake
+};
+</script>

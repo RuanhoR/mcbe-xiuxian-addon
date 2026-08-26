@@ -1,0 +1,31 @@
+<Component>
+  <feature_rules>
+    <featureRule id="spirit_stone_ore_feature_rule.json">ssOreFeatureRule</featureRule>
+  </feature_rules>
+</Component>
+<script lang="ts">
+import { FeatureRuleComponent } from "@mbler/mcx-component";
+
+const ssOreFeatureRule = new FeatureRuleComponent({
+  format: "1.13.0",
+  identifier: "xian:spirit_stone_ore_feature_rule",
+  places_feature: "xian:spirit_stone_ore_feature"
+});
+
+ssOreFeatureRule.setPlacementPass("underground_pass");
+ssOreFeatureRule.setBiomeFilter([
+  {
+    any_of: [
+      { test: "has_biome_tag", value: "overworld" },
+      { test: "has_biome_tag", value: "overworld_generation" }
+    ]
+  }
+]);
+ssOreFeatureRule.setIterations(10);
+ssOreFeatureRule.setCoordinateEvalOrder("zyx");
+ssOreFeatureRule.setAxisDistribution("x", { distribution: "uniform", extent: [0, 16] });
+ssOreFeatureRule.setAxisDistribution("y", { distribution: "uniform", extent: [-56, -20] });
+ssOreFeatureRule.setAxisDistribution("z", { distribution: "uniform", extent: [0, 16] });
+
+export { ssOreFeatureRule };
+</script>

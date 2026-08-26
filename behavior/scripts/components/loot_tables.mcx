@@ -1,0 +1,19 @@
+<Component>
+  <loot_tables>
+    <lootTable id="xian/putuan.json">putuanLoot</lootTable>
+  </loot_tables>
+</Component>
+<script lang="ts">
+import { LootTableComponent } from "@mbler/mcx-component";
+
+const putuanLoot = new LootTableComponent({
+  pools: [
+    {
+      rolls: 1,
+      entries: [{ type: "item", name: "xian:putuan_place" }]
+    }
+  ]
+});
+
+export { putuanLoot };
+</script>

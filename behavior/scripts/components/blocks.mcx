@@ -1,0 +1,38 @@
+<Component>
+  <blocks>
+    <block id="spirit_stone_ore.json">SpiritStoneOre</block>
+  </blocks>
+</Component>
+<script lang="ts">
+import { BlockComponent } from "@mbler/mcx-component";
+
+const SpiritStoneOre = new BlockComponent({
+  format: "1.26.30",
+  id: "xian:spirit_stone_ore"
+});
+
+SpiritStoneOre.setGeometry("minecraft:geometry.full_block");
+SpiritStoneOre.setLoot("loot_tables/empty");
+
+const materialInstances = {
+  north: { texture: "SpiritStone" },
+  south: { texture: "SpiritStone" },
+  east: { texture: "SpiritStone" },
+  west: { texture: "SpiritStone" },
+  up: { texture: "SpiritStone" },
+  down: { texture: "SpiritStone" }
+};
+SpiritStoneOre.setMaterialInstances(materialInstances);
+
+SpiritStoneOre.setItemVisual({
+  geometry: "minecraft:geometry.full_block",
+  material_instances: {
+    "*": { texture: "SpiritStone", render_method: "opaque" }
+  }
+});
+
+SpiritStoneOre.setDestructibleByMining({ seconds_to_destroy: 6 });
+SpiritStoneOre.setTags(["minecraft:is_pickaxe_item_destructible"]);
+
+export { SpiritStoneOre };
+</script>
