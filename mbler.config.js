@@ -23,9 +23,6 @@ export default defineConfig({
     // should true
     bundle: true,
     cache: "file",
-    async onEnd(ctx) {
-      writeFile;
-    },
   },
   outdir: {
     resources: "./dist/res",

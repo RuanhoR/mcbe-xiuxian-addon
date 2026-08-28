@@ -16,12 +16,15 @@
   "dependencies": {
     "@mbler/mcx": "0.0.6",
     "@minecraft/server": "2.9.0-beta.1.26.31-stable",
-    "@minecraft/server-ui": "2.2.0-beta.1.26.31-stable"
+    "@minecraft/server-ui": "2.2.0-beta.1.26.31-stable",
+    "lodash": "^4.18.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@mbler/mcx-component": "0.0.3-rc.7",
     "@mbler/mcx-core": "0.1.3-rc.17",
     "@mbler/mcx-types": "0.0.4-rc.7",
+    "@types/lodash": "^4.17.25",
     "cross-env": "^10.1.0",
     "mbler": "0.2.14-rc.8",
     "mcx-tsc": "0.0.2-rc.1",

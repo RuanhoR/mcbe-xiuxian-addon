@@ -1,14 +1,7 @@
 import { createApp, registryCommand } from "@mbler/mcx";
-import "./Items.mcx";
-import "./components/blocks.mcx";
-import "./components/recipes.mcx";
-import "./components/loot_tables.mcx";
-import "./components/features.mcx";
-import "./components/feature_rules.mcx";
+import "./components/generate";
 import App from "./app.mcx";
 import { world } from "@minecraft/server";
 import { resolveCommand } from "./command/resolve";
-import playerManagerCommand from "./command/playerManager";
 createApp(App).mount(world);
 registryCommand(resolveCommand);
-registryCommand(playerManagerCommand);

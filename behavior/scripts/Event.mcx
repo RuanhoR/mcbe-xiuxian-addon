@@ -1,64 +1,17 @@
 <Event @after>
-  itemUse = onItemUse
-  itemCompleteUse = onItemCompleteUse
   worldLoad = startLoop
-  entityHitEntity = hit
   McxExtendsBy = ./EventBefore.mcx
 </Event>
 <script lang="ts">
-import { EntityComponentTypes, EntityDamageCause, EntityHitEntityAfterEvent, EquipmentSlot, ItemStack, Player, world, type ItemCompleteUseAfterEvent, type ItemUseAfterEvent, type VanillaEntityIdentifier } from "@minecraft/server";
-import { AddonItem, SpiritStoneLevelMap } from "./config";
-import { handleGongFaUse, handleGongFaXideiUse } from "./core/gongfa";
-import { handleDanYaoCompleteUse } from "./core/danyao";
-import { PlayerLevel } from "./core/playerLevel"
-export function onItemUse(event: ItemUseAfterEvent) {
-  function removeItem() {
-    if (event.source.getGameMode() !== "Creative") if (event.itemStack.amount < 1) {
-      event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand)
-    } else {
-      event.source.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(AddonItem.PuTuan, event.itemStack.amount - 1))
+import { system, world } from "@minecraft/server"
+import { RUN_TICK } from "./config"
+import { processPlayerInTick } from "./core/tick"
+export function startLoop() {
+  system.runInterval(() => {
+    for (const player of world.getPlayers()) {
+      // 使用 system.run 并发
+      system.run(() => processPlayerInTick(player))
     }
-  }
-  if (event.itemStack.typeId == AddonItem.PuTuan) {
-    event.source.dimension.spawnEntity("xian:putuan" as unknown as VanillaEntityIdentifier, event.source.location);
-    removeItem();
-  } else if (event.itemStack?.typeId?.startsWith("xian:spirit_stone_level_")) {
-    const spiritStoneLevel = SpiritStoneLevelMap[event.itemStack?.typeId as keyof typeof SpiritStoneLevelMap];
-    if (!spiritStoneLevel) return;
-    const status = event.source.getDynamicProperty("_bstatus");
-    if (status !== "inPuTuan") {
-      event.source.sendMessage({
-        translate: "sapi.message.spiritstone.mustuseinputuan"
-      })
-    } else {
-
-    }
-  } else if (event.itemStack?.typeId == AddonItem.GongFa) {
-    handleGongFaUse(event.source, event.itemStack);
-  } else if (event.itemStack?.typeId == AddonItem.GongFaXidei) {
-    handleGongFaXideiUse(event.source, event.itemStack);
-  }
+  }, RUN_TICK)
 }
-export function onItemCompleteUse(event: ItemCompleteUseAfterEvent) {
-  if (event.itemStack?.typeId == AddonItem.DanYao) {
-    handleDanYaoCompleteUse(event.source, event.itemStack);
-  }
-}
-export function hit(event: EntityHitEntityAfterEvent) {
-  if (event.hitEntity.typeId == "xian:putuan" && event.damagingEntity.typeId == "minecraft:player") {
-    event.hitEntity.kill();
-    return;
-  }
-  if (event.damagingEntity.typeId == "minecraft:player") {
-    const player = event.damagingEntity as Player;
-    const playerLevelData = new PlayerLevel(player).getLevel();
-    if (event.hitEntity.isValid && playerLevelData.levelRef > 1) {
-      event.hitEntity.applyDamage(6 * playerLevelData.levelRef, {
-        damagingEntity: event.damagingEntity,
-        cause: EntityDamageCause.entityAttack
-      })
-    }
-  }
-}
-export { startLoop } from "./core/loop"
 </script>

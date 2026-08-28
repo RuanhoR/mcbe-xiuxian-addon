@@ -47,3 +47,50 @@ export const levelMaxLayer = {
 } satisfies {
   [key in `${PlayerLevelRefList}`]: number;
 };
+export const PlayerSpiritMap = {
+  1: {
+    layer: 3,
+    base: 1,
+  },
+  2: {
+    layer: 8,
+    base: 6,
+  },
+  3: {
+    layer: 16,
+    base: 110,
+  },
+  4: {
+    layer: 40,
+    base: 270,
+  },
+  5: {
+    layer: 100,
+    base: 670,
+  },
+  6: {
+    layer: 250,
+    base: 1600,
+  },
+  7: {
+    layer: 600,
+    base: 3900,
+  },
+  8: {
+    layer: 2100,
+    base: 17670,
+  },
+  9: {
+    layer: 5250,
+    base: 84000,
+  },
+  10: {
+    layer: 21000,
+    base: 140000,
+  },
+} satisfies {
+  [key in `${PlayerLevelRefList}`]: {
+    layer: number;
+    base: number;
+  };
+};

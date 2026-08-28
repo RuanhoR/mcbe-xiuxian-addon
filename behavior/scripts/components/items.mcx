@@ -15,17 +15,17 @@
 </Component>
 <script lang="ts">
 import { ItemComponent } from "@mbler/mcx-component";
-import { AddonItem } from "./config";
+import { AddonItem } from "../config";
 // ===== Define SpiritStoneItem ==== 
-import RawSpiritStoneOreIcon from "./assets/raw_spirit_stone_ore.png"
-import SpiritStoneLevel0Icon from "./assets/spirit_stone_level0.png"
-import SpiritStoneLevel1Icon from "./assets/spirit_stone_level1.png"
-import SpiritStoneLevel2Icon from "./assets/spirit_stone_level2.png"
-import SpiritStoneLevel3Icon from "./assets/spirit_stone_level3.png"
-import SpiritStoneLevel4Icon from "./assets/spirit_stone_level4.png"
-import PuTuanIcon from "./assets/putuan-place.png";
-import DanYaoIcon from "./assets/danyao.png";
-import GongFaIcon from "./assets/gongfa.png"
+import RawSpiritStoneOreIcon from "../assets/raw_spirit_stone_ore.png"
+import SpiritStoneLevel0Icon from "../assets/spirit_stone_level0.png"
+import SpiritStoneLevel1Icon from "../assets/spirit_stone_level1.png"
+import SpiritStoneLevel2Icon from "../assets/spirit_stone_level2.png"
+import SpiritStoneLevel3Icon from "../assets/spirit_stone_level3.png"
+import SpiritStoneLevel4Icon from "../assets/spirit_stone_level4.png"
+import PuTuanIcon from "../assets/putuan-place.png";
+import DanYaoIcon from "../assets/danyao.png";
+import GongFaIcon from "../assets/gongfa.png"
 function createItem(id: string, icon?: string, maxStack = 64) {
   const item = new ItemComponent({
     components: {},
