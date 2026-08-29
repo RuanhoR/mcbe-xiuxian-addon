@@ -1,17 +1,35 @@
 <Event @after>
   worldLoad = startLoop
+  entityHurt = onHurt
   McxExtendsBy = ./EventBefore.mcx
 </Event>
 <script lang="ts">
-import { system, world } from "@minecraft/server"
-import { RUN_TICK } from "./config"
-import { processPlayerInTick } from "./core/tick"
+import { EntityHurtAfterEvent, system, world } from "@minecraft/server";
+import { processPlayerInTick } from "./core/tick";
+import { RUN_TICK } from "./config";
+import { onPlayerStatusChange } from "./command/resolve";
+import { ActionFormData } from "@minecraft/server-ui"
+import { t } from "./utils";
 export function startLoop() {
+  onPlayerStatusChange((status, player) => {
+    if (status == "inPuTuan") {
+      const form = new ActionFormData();
+      form.title(t("form.putuan.main.title"));
+      form.button(t("form.putuan.main.button.1"));
+      form.button(t("form.putuan.main.button.2"));
+      form.show(player).then(r => { })
+    }
+  })
   system.runInterval(() => {
     for (const player of world.getPlayers()) {
       // 使用 system.run 并发
       system.run(() => processPlayerInTick(player))
     }
   }, RUN_TICK)
+}
+export function onHurt(event: EntityHurtAfterEvent) {
+  if (event.hurtEntity.typeId == "minecraft:player") {
+
+  }
 }
 </script>

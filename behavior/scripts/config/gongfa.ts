@@ -176,7 +176,6 @@ export const GongFaEnum = {
   recover_entity_health: {
     level: 4,
     use: {
-      useItem: true,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const level = event.proficiencyLevel;
@@ -232,12 +231,13 @@ export enum GongFaProficiency {
 }
 export interface GongFaUseEvent extends GongFaEvent {
   playerHurt?: {
-    damgingEntity: Entity;
+    damgingEntity?: Entity;
     hurtCause: EntityDamageCause;
     damage: number;
+    damagingProjectile?: Entity;
   };
-  hitEntity: { hitEntity?: Entity };
-  hitBlock: { block: Block; face: Direction };
+  hitEntity?: { hitEntity: Entity };
+  interactBlock?: { block: Block; face: Direction };
   type: GongFaExecUseEvent;
 }
 export interface GongFaProficiencyData {
@@ -252,7 +252,7 @@ export interface GongFaProficiencyData {
 export type GongFaExecUseEvent =
   | "playerHurt"
   | "hitEntity"
-  | "hitBlock"
+  | "interactBlock"
   | "ItemUse";
 export interface GongFaBackendEvent extends GongFaEvent {}
 export interface GongFaEnumType {
@@ -274,10 +274,6 @@ export interface GongFaEnumType {
      * On Player Use, run the fn
      */
     onUse?: (event: GongFaUseEvent) => void;
-    /**
-     * On Item use, run onUse event
-     */
-    useItem?: boolean;
     /**
      * Called every 10 ticks while this GongFa is active (after player has learned it).
      * Use this for persistent effects like aura damage, passive detection, or resource drain.

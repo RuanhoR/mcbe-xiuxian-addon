@@ -1,4 +1,10 @@
-import { GongFaEnumType, GongFaProficiency } from "../config/gongfa";
+import { RawMessage } from "@minecraft/server";
+import {
+  GongFaEnumType,
+  GongFaProficiency,
+  GongFaType,
+} from "../config/gongfa";
+import { t } from "./message";
 
 export function calcGongFaProficiencyLevel(
   GongFaData: GongFaEnumType,
@@ -35,4 +41,7 @@ export function calcGongFaProficiencyLevel(
     level: 1,
     name: GongFaProficiency.beginner,
   };
+}
+export function getGongFaName(GongFaId: GongFaType): RawMessage {
+  return t(`sapi.namedefine.gongfa.${GongFaId}`);
 }

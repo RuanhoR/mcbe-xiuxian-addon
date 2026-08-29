@@ -1,12 +1,11 @@
 import {
   EntityHitEntityAfterEvent,
   EntityHurtAfterEvent,
-  ItemUseAfterEvent,
   Player,
   PlayerInteractWithBlockAfterEvent,
   system,
 } from "@minecraft/server";
-import { GongFaEnumType, GongFaExecUseEvent } from "../config/gongfa";
+import { GongFaEnumType, GongFaUseEvent } from "../config/gongfa";
 import { PlayerLevelDataType } from "../schemas";
 import { calcGongFaProficiencyLevel } from "../utils";
 
@@ -37,11 +36,43 @@ export class GongFaRuntime {
           this.gongFaData.use.backend(this._buildBaseGongFaEvent()),
       );
   }
-  public runUseEvent(vanillaEvent: {
-    hitBlock?: PlayerInteractWithBlockAfterEvent;
-    hitEntity?: EntityHitEntityAfterEvent;
-    itemUse?: ItemUseAfterEvent;
-    playerHurt?: EntityHurtAfterEvent;
-    type: GongFaExecUseEvent;
-  }) {}
+  public runUseEvent({
+    type,
+    event,
+  }:
+    | { type: "ItemUse"; event: null }
+    | { type: "interactBlock"; event: PlayerInteractWithBlockAfterEvent }
+    | { type: "hitEntity"; event: EntityHitEntityAfterEvent }
+    | { type: "playerHurt"; event: EntityHurtAfterEvent }) {
+    // Need Exec
+    if (
+      !this.gongFaData.use.exec_use_event ||
+      !this.gongFaData.use.onUse ||
+      !this.gongFaData.use.exec_use_event.includes(type)
+    ) {
+      return;
+    }
+    // Build Event Object
+    const baseEvent: GongFaUseEvent = { ...this._buildBaseGongFaEvent(), type };
+    if (type == "interactBlock") {
+      baseEvent.interactBlock = {
+        block: event.block,
+        face: event.blockFace,
+      };
+    }
+    if (type == "hitEntity") {
+      baseEvent.hitEntity = {
+        hitEntity: event.hitEntity,
+      };
+    }
+    if (type == "playerHurt") {
+      baseEvent.playerHurt = {
+        hurtCause: event.damageSource.cause,
+        damgingEntity: event.damageSource.damagingEntity,
+        damagingProjectile: event.damageSource.damagingProjectile,
+        damage: event.damage,
+      };
+    }
+    this.gongFaData.use.onUse(baseEvent);
+  }
 }
