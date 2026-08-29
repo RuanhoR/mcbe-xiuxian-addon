@@ -1,6 +1,7 @@
 import z from "zod";
 import { GongFaEnum, GongFaType } from "./config/gongfa";
 import { levelMaxLayer } from "./config";
+import { SpiritualRoot } from "./types";
 
 export const schemas = [
   z.object({
@@ -25,17 +26,8 @@ export const schemas = [
 
     // 灵根
     tr: z.object({
-      // 灵根属性，0 = 金 1 = 木 2 = 水 3 = 火 4= 土 5 = 无
-      arr: z.array(
-        z.union([
-          z.literal(0),
-          z.literal(1),
-          z.literal(2),
-          z.literal(3),
-          z.literal(4),
-          z.literal(5),
-        ]),
-      ),
+      // 灵根属性，0 = 金 1 = 木 2 = 水 3 = 火 4= 土 5 = 无，可混合
+      arr: z.array(z.union(SpiritualRoot.map((r) => z.literal(r)))),
     }),
   }),
 ];
@@ -54,3 +46,4 @@ export function verifyPlayerLevelData(data: unknown) {
   return _verify(data, schemas[0]);
 }
 export type PlayerLevelDataType = z.infer<(typeof schemas)[0]>;
+export default schemas;

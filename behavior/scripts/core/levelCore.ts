@@ -55,6 +55,9 @@ export class LevelCore {
     cacheMap.delete(player.id);
     this.getRawData(player);
   }
+  public static getRawSpiritualRoot(player: Player) {
+    const rawData = this.getRawData(player);
+  }
   public static getRawData(player: Player) {
     if (cacheMap.has(player.id)) {
       return cloneDeep(cacheMap.get(player.id)) as PlayerLevelDataType;
