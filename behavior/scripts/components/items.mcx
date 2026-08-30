@@ -45,6 +45,8 @@ import SpiritStoneLevel4Icon from "../assets/spirit_stone_level4.png"
 import PuTuanIcon from "../assets/putuan-place.png";
 import DanYaoIcon from "../assets/danyao.png";
 import GongFaIcon from "../assets/gongfa.png"
+import GongFaXideiIcon from "../assets/gongfa_xidei.png"
+import FormationPlateIcon from "../assets/formation_plate.png"
 // ===== Define DanYao Icons (20色) ====
 import DanYaoZhuhongIcon from "../assets/danyao_zhuhong.png"
 import DanYaoOrangeIcon from "../assets/danyao_orange.png"
@@ -85,10 +87,10 @@ export const SpiritStoneLevel3 = createItem(AddonItem.SpiritStoneLevel3, SpiritS
 export const SpiritStoneLevel4 = createItem(AddonItem.SpiritStoneLevel4, SpiritStoneLevel4Icon)
 // ==== Chore ====
 export const PuTuan = createItem(AddonItem.PuTuan, PuTuanIcon)
-export const ZhenPan = createItem(AddonItem.ZhenPan)
+export const ZhenPan = createItem(AddonItem.ZhenPan, FormationPlateIcon)
 // ==== GongFa ====
 export const GongFa = createItem(AddonItem.GongFa, GongFaIcon, 1)
-export const GongFaXidei = createItem(AddonItem.GongFaXidei, undefined, 1)
+export const GongFaXidei = createItem(AddonItem.GongFaXidei, GongFaXideiIcon, 1)
 // ==== DanYao 20色 ====
 // menuCategory: 金黄丹为 "items"（创造栏可见），其余为 "none"（不在创造栏显示）
 function createDanYao(id: AddonItem, icon: string, menuCategory: string) {

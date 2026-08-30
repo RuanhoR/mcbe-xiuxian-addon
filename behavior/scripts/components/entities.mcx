@@ -1,0 +1,46 @@
+<Component>
+  <entities>
+    <entity id="xian/zhenfa.json">ZhenFa</entity>
+  </entities>
+</Component>
+<script lang="ts">
+import { EntityComponent } from "@mbler/mcx-component";
+
+const ZhenFa = new EntityComponent({
+  format: "1.26.30",
+  id: "xian:zhenfa",
+  is_spawnable: false,
+  is_summonable: true,
+  is_experimental: false,
+  components: {
+    "minecraft:collision_box": {
+      width: 0.9,
+      height: 0.2
+    },
+    "minecraft:health": {
+      value: 1,
+      max: 1
+    },
+    "minecraft:damage_sensor": {
+      triggers: [
+        {
+          cause: "all",
+          deals_damage: false
+        }
+      ]
+    },
+    "minecraft:despawn": {
+      despawn_from_distance: false
+    }
+  }
+});
+
+ZhenFa.setPhysics({
+  has_gravity: false,
+  has_collision: false
+});
+
+export {
+  ZhenFa
+}
+</script>

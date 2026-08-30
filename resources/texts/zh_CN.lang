@@ -177,3 +177,5 @@ sapi.message.gongfa.spirit_lack=灵气不足，无法催动功法！
 form.putuan.main.title=修炼菜单
 form.putuan.main.button.1=修炼
 form.putuan.main.button.1=功法
+entity.xian:zhenfa=阵法
+item.xian:sp_zhen_pan=阵盘

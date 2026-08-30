@@ -21,7 +21,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@mbler/mcx-component": "0.0.4-rc.1",
+    "@mbler/mcx-component": "0.0.4-rc.2",
     "@mbler/mcx-core": "1.1.5-dev.1",
     "@mbler/mcx-types": "0.0.4-rc.8",
     "@types/lodash": "^4.17.25",

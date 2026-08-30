@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xian:zhenfa",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/zhenfa"
+      },
+      "geometry": {
+        "default": "geometry.zhenfa_geo"
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

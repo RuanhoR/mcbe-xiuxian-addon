@@ -22,10 +22,14 @@ import { processPlayerInTick } from "./core/tick";
 import { dispatchGongFaUseEvent } from "./core/gongFaDispatch";
 import { useDanYao } from "./core/danYaoRuntime";
 import { isDanYaoItem } from "./utils/danyao";
+import { placeZhenFa } from "./core/zhenFaRuntime";
+import { processZhenFaInTick } from "./core/zhenFaRuntime";
+import { getZhenFaIdFromItem } from "./utils/zhenfa";
 import { showPutuanMenu } from "./core/putuanMenu";
 import { AddonItem } from "./config";
 import { RUN_TICK } from "./config";
 import { onPlayerStatusChange } from "./command/resolve";
+
 export function startLoop() {
   onPlayerStatusChange((status, player) => {
     if (status == "inPuTuan") {
@@ -37,6 +41,8 @@ export function startLoop() {
       // 使用 system.run 并发
       system.run(() => processPlayerInTick(player))
     }
+    // 阵法推进是全局的（遍历所有维度），不随玩家重复
+    system.run(() => processZhenFaInTick())
   }, RUN_TICK)
 }
 export function onHurt(event: EntityHurtAfterEvent) {
@@ -66,6 +72,14 @@ export function onHitEntity(event: EntityHitEntityAfterEvent) {
   }
 }
 export function onInteractBlock(event: PlayerInteractWithBlockAfterEvent) {
+  // 阵法优先：手持已铭刻阵盘轻触方块 → 布阵
+  if (
+    event.itemStack?.typeId === AddonItem.ZhenPan &&
+    getZhenFaIdFromItem(event.itemStack)
+  ) {
+    placeZhenFa(event.player, event.itemStack, event.block, event.blockFace);
+    return;
+  }
   dispatchGongFaUseEvent(event.player, "interactBlock", event);
 }
 </script>

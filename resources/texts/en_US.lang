@@ -294,3 +294,6 @@ sapi.danyao.l9.0=Tribulation Pill
 sapi.danyao.l9.1=Ascension Pill
 sapi.danyao.l9.2=Dao Proving Pill
 sapi.danyao.l9.3=Transcendence Pill
+
+entity.xian:zhenfa=Formation
+item.xian:sp_zhen_pan=Formation Plate

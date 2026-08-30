@@ -4,6 +4,16 @@ import { GongFaRuntime } from "./gongFaRuntime";
 import { GongFaEnumType, GongFaType } from "../config/gongfa";
 import { AddonItem } from "../config";
 import { processDanYaoInTick } from "./danYaoRuntime";
+import { processMeditationInTick } from "./meditation";
+import {
+  getDanYaoIdFromItem,
+  normalizeDanYaoItem,
+} from "../utils/danyao";
+import {
+  getGongFaIdFromItem,
+  normalizeGongFaItem,
+} from "../utils/gongfa";
+import { getZhenFaIdFromItem, normalizeZhenFaItem } from "../utils/zhenfa";
 
 export function processPlayerInTick(player: Player) {
   const playerLevelData = new LevelCore(player);
@@ -27,18 +37,25 @@ export function processPlayerInTick(player: Player) {
   system.run(() => {
     processDanYaoInTick(player);
   });
-  // task 2: identify gongfa, danyao
+  // task 2.5: meditation (修炼，检查周围灵气)
   system.run(() => {
-    const playerInv = player.getComponent(
+    processMeditationInTick(player);
+  });
+  // task 3: scan inventory, normalize danyao / gongfa item display
+  system.run(() => {
+    const container = player.getComponent(
       EntityComponentTypes.Inventory,
     )?.container;
-    if (!playerInv) {
-      return;
-    }
-    for (let slot = 0; slot < playerInv?.size; slot++) {
-      const item = playerInv.getItem(slot);
+    if (!container) return;
+    for (let slot = 0; slot < container.size; slot++) {
+      const item = container.getItem(slot);
       if (!item) continue;
-      if (item.typeId == AddonItem.GongFa) {
+      if (getDanYaoIdFromItem(item)) {
+        if (normalizeDanYaoItem(item)) container.setItem(slot, item);
+      } else if (item.typeId == AddonItem.ZhenPan) {
+        if (normalizeZhenFaItem(item)) container.setItem(slot, item);
+      } else if (item.typeId == AddonItem.GongFa) {
+        if (normalizeGongFaItem(item)) container.setItem(slot, item);
       }
     }
   });

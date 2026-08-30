@@ -7,7 +7,7 @@ import {
   GongFaProficiency,
   GongFaType,
 } from "../config/gongfa";
-import { t, rawToText } from "./message";
+import { t, rawMessage } from "./message";
 import { SpiritualRootType } from "../types";
 
 export function calcGongFaProficiencyLevel(
@@ -100,21 +100,31 @@ export function getGongFaIdFromItem(item: ItemStack): GongFaType | null {
   return null;
 }
 
+/** 功法物品 lore：功法名（t() 由游戏翻译）+ 标记行 */
+export function generateGongFaLore(id: GongFaType): (RawMessage | string)[] {
+  return [
+    getGongFaName(id),
+    rawMessage`§r§8${GONGFA_LORE_TAG}${id}`,
+  ];
+}
+
 /** 生成功法物品：lore 编码功法 id，默认锁定在背包（不可丢弃/转移） */
 export function createGongFaItem(id: GongFaType, lock = true): ItemStack | undefined {
-  const def = GongFaEnum[id];
-  if (!def) return undefined;
+  if (!GongFaEnum[id]) return undefined;
   const item = new ItemStack(AddonItem.GongFa, 1);
-  item.nameTag = rawToText(getGongFaName(id));
-  item.setLore([
-    ...generateGongFaLore(),
-    `§r§8${GONGFA_LORE_TAG}${id}`,
-  ]);
+  item.setLore(generateGongFaLore(id));
   if (lock) item.lockMode = ItemLockMode.inventory;
   return item;
 }
 
-/** 功法物品 lore 行 */
-export function generateGongFaLore(): string[] {
-  return ["§r§7功法书"];
+/**
+ * 规范化背包中的功法物品显示（lore 缺失/为空时按定义补全）。
+ * @returns 是否有改动（有改动才需要 setItem 写回）
+ */
+export function normalizeGongFaItem(item: ItemStack): boolean {
+  const id = getGongFaIdFromItem(item);
+  if (!id) return false;
+  if (item.getLore().length >= 2) return false;
+  item.setLore(generateGongFaLore(id));
+  return true;
 }

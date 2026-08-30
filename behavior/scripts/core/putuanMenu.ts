@@ -5,6 +5,7 @@ import { LevelCore } from "./levelCore";
 import { getGongFaName } from "../utils/gongfa";
 import { rawMessage } from "../utils/message";
 import { giveUniqueGongFaItem, removeGongFaItems } from "./gongFaItem";
+import { isMeditating, setMeditating } from "./meditation";
 
 const ProficiencyStageName: Record<GongFaProficiency, string> = {
   beginner: "初入门径",
@@ -17,11 +18,17 @@ export function showPutuanMenu(player: Player) {
   const form = new ActionFormData();
   form.title(rawMessage`§l蒲团`);
   form.body(rawMessage`§7于蒲团之上静心调息`);
+  form.button(isMeditating(player) ? rawMessage`收功\n§8（停止打坐修炼）` : rawMessage`打坐修炼\n§8（吸收周围环境灵气）`);
   form.button(rawMessage`我的功法`);
   form.button(rawMessage`关闭`);
   form.show(player).then((r) => {
     if (r.canceled) return;
-    if (r.selection === 0) showGongFaList(player);
+    if (r.selection === 0) {
+      setMeditating(player, !isMeditating(player));
+      showPutuanMenu(player);
+      return;
+    }
+    if (r.selection === 1) showGongFaList(player);
   });
 }
 
