@@ -12,6 +12,7 @@ export const NeutralGongFa = {
     tr: [1, 2, 4],
     level: 4,
     use: {
+      spiritCost: 200,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const level = event.proficiencyLevel;
@@ -293,6 +294,7 @@ export const NeutralGongFa = {
       world: { p: 6000 },
     },
     use: {
+      spiritCost: 5,
       // 每 10 tick 生效：吐纳调息，气息绵长
       backend(event) {
         giveEffect(event.player, "regeneration", 80, Math.max(0, event.proficiencyLevel - 2));
@@ -431,6 +433,7 @@ export const NeutralGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 250,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -493,6 +496,7 @@ export const NeutralGongFa = {
       world: { p: 20000 },
     },
     use: {
+      spiritCost: 1200,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const dist = 6 + event.proficiencyLevel * 3;
@@ -518,6 +522,7 @@ export const NeutralGongFa = {
       world: { p: 60000 },
     },
     use: {
+      spiritCost: 50000,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;

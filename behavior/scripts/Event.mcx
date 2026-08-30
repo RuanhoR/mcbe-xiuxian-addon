@@ -1,23 +1,35 @@
 <Event @after>
   worldLoad = startLoop
   entityHurt = onHurt
+  itemUse = onItemUse
+  itemCompleteUse = onItemCompleteUse
+  entityHitEntity = onHitEntity
+  playerInteractWithBlock = onInteractBlock
   McxExtendsBy = ./EventBefore.mcx
 </Event>
 <script lang="ts">
-import { EntityHurtAfterEvent, system, world } from "@minecraft/server";
+import {
+  EntityHitEntityAfterEvent,
+  EntityHurtAfterEvent,
+  ItemCompleteUseAfterEvent,
+  ItemUseAfterEvent,
+  Player,
+  PlayerInteractWithBlockAfterEvent,
+  system,
+  world,
+} from "@minecraft/server";
 import { processPlayerInTick } from "./core/tick";
+import { dispatchGongFaUseEvent } from "./core/gongFaDispatch";
+import { useDanYao } from "./core/danYaoRuntime";
+import { isDanYaoItem } from "./utils/danyao";
+import { showPutuanMenu } from "./core/putuanMenu";
+import { AddonItem } from "./config";
 import { RUN_TICK } from "./config";
 import { onPlayerStatusChange } from "./command/resolve";
-import { ActionFormData } from "@minecraft/server-ui"
-import { t } from "./utils";
 export function startLoop() {
   onPlayerStatusChange((status, player) => {
     if (status == "inPuTuan") {
-      const form = new ActionFormData();
-      form.title(t("form.putuan.main.title"));
-      form.button(t("form.putuan.main.button.1"));
-      form.button(t("form.putuan.main.button.2"));
-      form.show(player).then(r => { })
+      showPutuanMenu(player);
     }
   })
   system.runInterval(() => {
@@ -29,7 +41,31 @@ export function startLoop() {
 }
 export function onHurt(event: EntityHurtAfterEvent) {
   if (event.hurtEntity.typeId == "minecraft:player") {
-
+    dispatchGongFaUseEvent(event.hurtEntity as Player, "playerHurt", event);
   }
+}
+export function onItemUse(event: ItemUseAfterEvent) {
+  const player = event.source;
+  if (player.typeId != "minecraft:player") return;
+  // 功法主动技能：仅以功法物品（洗得）为施法媒介
+  if (event.itemStack?.typeId === AddonItem.GongFaXidei) {
+    dispatchGongFaUseEvent(player as Player, "ItemUse", event);
+  }
+}
+export function onItemCompleteUse(event: ItemCompleteUseAfterEvent) {
+  const player = event.source;
+  if (player.typeId != "minecraft:player") return;
+  // 丹药：吃完（use_duration 走完）才生效，否则右键一开就触发了
+  if (isDanYaoItem(event.itemStack)) {
+    useDanYao(player as Player, event.itemStack);
+  }
+}
+export function onHitEntity(event: EntityHitEntityAfterEvent) {
+  if (event.damagingEntity.typeId == "minecraft:player") {
+    dispatchGongFaUseEvent(event.damagingEntity as Player, "hitEntity", event);
+  }
+}
+export function onInteractBlock(event: PlayerInteractWithBlockAfterEvent) {
+  dispatchGongFaUseEvent(event.player, "interactBlock", event);
 }
 </script>

@@ -1,6 +1,7 @@
 import { BodyGongFa } from "./gongfa/body";
 import { EarthGongFa } from "./gongfa/earth";
 import { FireGongFa } from "./gongfa/fire";
+import { ForbiddenGongFa } from "./gongfa/forbidden";
 import { MetalGongFa } from "./gongfa/metal";
 import { NeutralGongFa } from "./gongfa/neutral";
 import { WaterGongFa } from "./gongfa/water";
@@ -22,6 +23,7 @@ export const GongFaEnum = {
   ...EarthGongFa,
   ...BodyGongFa,
   ...NeutralGongFa,
+  ...ForbiddenGongFa,
 } satisfies {
   [key: string]: GongFaEnumType;
 };

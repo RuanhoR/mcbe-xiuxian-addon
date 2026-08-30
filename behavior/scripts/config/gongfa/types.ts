@@ -69,6 +69,14 @@ export interface GongFaEnumType {
      */
     onUse?: (event: GongFaUseEvent) => void;
     /**
+     * 灵气消耗（可选）。功法生效（onUse / backend 每次调用）前从玩家
+     * 现存灵力中扣除，不足则不生效；主动技能不足时会收到提示。
+     * - number：固定消耗
+     * - 函数：随熟练度等动态计算
+     * 未定义 = 不消耗
+     */
+    spiritCost?: number | ((event: GongFaBackendEvent) => number);
+    /**
      * Called every 10 ticks while this GongFa is active (after player has learned it).
      * Use this for persistent effects like aura damage, passive detection, or resource drain.
      *

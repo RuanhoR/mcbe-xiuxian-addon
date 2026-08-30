@@ -101,6 +101,7 @@ export const EarthGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 100,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -152,6 +153,7 @@ export const EarthGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 80,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -213,6 +215,7 @@ export const EarthGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 300,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -277,6 +280,7 @@ export const EarthGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 15,
       // 每 10 tick 生效：大地脉动削弱周身之敌
       backend(event) {
         const lvl = event.proficiencyLevel;
@@ -339,6 +343,7 @@ export const EarthGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 2500,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;

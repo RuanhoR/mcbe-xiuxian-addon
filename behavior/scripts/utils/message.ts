@@ -44,3 +44,14 @@ export function t(t: string): RawMessage {
     translate: t,
   };
 }
+/**
+ * RawMessage → 纯文本（递归展开 rawtext）。
+ * 用于只接受 string 的 API（如 ItemStack.nameTag、button 快捷拼接）。
+ */
+export function rawToText(msg: RawMessage): string {
+  if (typeof msg === "string") return msg;
+  if (msg.text !== undefined) return msg.text;
+  if (msg.translate !== undefined) return msg.translate;
+  if (msg.rawtext) return msg.rawtext.map(rawToText).join("");
+  return "";
+}

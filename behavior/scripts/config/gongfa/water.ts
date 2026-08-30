@@ -113,6 +113,7 @@ export const WaterGongFa = {
       world: { p: 6000 },
     },
     use: {
+      spiritCost: 5,
       // 每 10 tick 持续生效：如春雨般缓慢滋养己身
       backend(event) {
         const lvl = event.proficiencyLevel;
@@ -137,6 +138,7 @@ export const WaterGongFa = {
       world: { p: 6000 },
     },
     use: {
+      spiritCost: 50,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const dist = 4 + event.proficiencyLevel * 2;
@@ -263,6 +265,7 @@ export const WaterGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 100,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -285,6 +288,7 @@ export const WaterGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 300,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -315,6 +319,7 @@ export const WaterGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 500,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -340,6 +345,7 @@ export const WaterGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 400,
       onUse(event) {
         if (event.type !== "playerHurt") return;
         const lvl = event.proficiencyLevel;
@@ -362,6 +368,7 @@ export const WaterGongFa = {
       world: { p: 20000 },
     },
     use: {
+      spiritCost: 1000,
       onUse(event) {
         if (event.type !== "hitEntity") return;
         const target = event.hitEntity?.hitEntity;
@@ -390,6 +397,7 @@ export const WaterGongFa = {
       world: { p: 30000 },
     },
     use: {
+      spiritCost: 3000,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;

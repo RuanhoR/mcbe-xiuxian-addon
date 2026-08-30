@@ -110,6 +110,7 @@ export const MetalGongFa = {
       world: { p: 6000 },
     },
     use: {
+      spiritCost: 40,
       onUse(event) {
         if (event.type !== "hitEntity") return;
         const target = event.hitEntity?.hitEntity;
@@ -136,6 +137,7 @@ export const MetalGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 80,
       onUse(event) {
         if (event.type !== "hitEntity") return;
         const target = event.hitEntity?.hitEntity;
@@ -237,6 +239,7 @@ export const MetalGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 200,
       onUse(event) {
         if (event.type !== "playerHurt") return;
         const attacker = event.playerHurt?.damgingEntity;
@@ -260,6 +263,7 @@ export const MetalGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 300,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -283,6 +287,7 @@ export const MetalGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 500,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -305,6 +310,7 @@ export const MetalGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 500,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -377,6 +383,7 @@ export const MetalGongFa = {
       world: { p: 40000 },
     },
     use: {
+      spiritCost: 20000,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;

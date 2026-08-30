@@ -29,6 +29,10 @@ export const schemas = [
       // 灵根属性，0 = 金 1 = 木 2 = 水 3 = 火 4= 土 5 = 无，可混合
       arr: z.array(z.union(SpiritualRoot.map((r) => z.literal(r)))),
     }),
+    // 丹药状态（可选）：key → 过期 tick
+    // - `<danyaoId>`：丹药 buff 生效截止 tick
+    // - `cd:<danyaoId>`：丹药服用冷却截止 tick
+    buff: z.record(z.string(), z.number()).optional(),
   }),
 ];
 function _verify<_, T extends z.ZodObject>(data: unknown, schema: T) {

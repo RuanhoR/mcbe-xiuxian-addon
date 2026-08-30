@@ -140,6 +140,7 @@ export const FireGongFa = {
       world: { p: 6000 },
     },
     use: {
+      spiritCost: 50,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -211,6 +212,7 @@ export const FireGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 80,
       onUse(event) {
         if (event.type !== "hitEntity") return;
         const target = event.hitEntity?.hitEntity;
@@ -236,6 +238,7 @@ export const FireGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 100,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -298,6 +301,7 @@ export const FireGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 30,
       // 每 10 tick 生效：周身热浪灼烧近敌
       backend(event) {
         const lvl = event.proficiencyLevel;
@@ -325,6 +329,7 @@ export const FireGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 600,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -439,6 +444,7 @@ export const FireGongFa = {
       world: { p: 40000 },
     },
     use: {
+      spiritCost: 25000,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;

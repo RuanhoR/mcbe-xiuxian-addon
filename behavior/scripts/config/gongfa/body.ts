@@ -387,6 +387,7 @@ export const BodyGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 60,
       onUse(event) {
         if (event.type !== "playerHurt") return;
         const attacker = event.playerHurt?.damgingEntity;
@@ -414,6 +415,7 @@ export const BodyGongFa = {
       world: { p: 9000 },
     },
     use: {
+      spiritCost: 500,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;

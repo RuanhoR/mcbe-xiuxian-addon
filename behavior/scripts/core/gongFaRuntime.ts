@@ -7,7 +7,9 @@ import {
 } from "@minecraft/server";
 import { GongFaEnumType, GongFaUseEvent } from "../config/gongfa";
 import { PlayerLevelDataType } from "../schemas";
-import { calcGongFaProficiencyLevel } from "../utils";
+import { LevelCore } from "./levelCore";
+import { calcGongFaProficiencyLevel, t } from "../utils";
+import type { GongFaBackendEvent } from "../config/gongfa/types";
 
 export class GongFaRuntime {
   constructor(
@@ -28,13 +30,29 @@ export class GongFaRuntime {
       proficiencyLevelName: this.proficiencyData.name,
     };
   }
+  /**
+   * 解析本次生效的灵气消耗
+   */
+  private _resolveSpiritCost(event: GongFaBackendEvent) {
+    const cost = this.gongFaData.use.spiritCost;
+    if (cost == null) return 0;
+    return typeof cost == "function" ? cost(event) : cost;
+  }
+  /**
+   * 尝试扣除灵气；不足时不消耗并返回 false
+   */
+  private _tryConsumeSpirit(event: GongFaBackendEvent) {
+    return LevelCore.useSpirit(this.target, this._resolveSpiritCost(event));
+  }
   public runBackend() {
-    if (this.gongFaData.use.backend)
-      system.run(
-        () =>
-          this.gongFaData.use.backend &&
-          this.gongFaData.use.backend(this._buildBaseGongFaEvent()),
-      );
+    if (!this.gongFaData.use.backend) return;
+    system.run(() => {
+      if (!this.gongFaData.use.backend) return;
+      const baseEvent = this._buildBaseGongFaEvent();
+      // 灵气不足时后台功法静默跳过本次生效
+      if (!this._tryConsumeSpirit(baseEvent)) return;
+      this.gongFaData.use.backend(baseEvent);
+    });
   }
   public runUseEvent({
     type,
@@ -72,6 +90,16 @@ export class GongFaRuntime {
         damagingProjectile: event.damageSource.damagingProjectile,
         damage: event.damage,
       };
+    }
+    if (!this._tryConsumeSpirit(baseEvent)) {
+      try {
+        this.target.onScreenDisplay.setActionBar(
+          t("sapi.message.gongfa.spirit_lack"),
+        );
+      } catch (error) {
+        console.error(error);
+      }
+      return;
     }
     this.gongFaData.use.onUse(baseEvent);
   }

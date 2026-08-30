@@ -63,6 +63,7 @@ export const WoodGongFa = {
       world: { p: 4000 },
     },
     use: {
+      spiritCost: 30,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -117,6 +118,7 @@ export const WoodGongFa = {
       world: { p: 6000 },
     },
     use: {
+      spiritCost: 50,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -140,6 +142,7 @@ export const WoodGongFa = {
       world: { p: 8000 },
     },
     use: {
+      spiritCost: 80,
       onUse(event) {
         if (event.type !== "hitEntity") return;
         const target = event.hitEntity?.hitEntity;
@@ -195,6 +198,7 @@ export const WoodGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 8,
       // 每 10 tick 生效：灵种在体内生根发芽，缓慢积蓄护体真元
       backend(event) {
         giveEffect(event.player, "absorption", 60, Math.max(0, event.proficiencyLevel - 2));
@@ -213,6 +217,7 @@ export const WoodGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 200,
       onUse(event) {
         if (event.type !== "playerHurt") return;
         const attacker = event.playerHurt?.damgingEntity;
@@ -235,6 +240,7 @@ export const WoodGongFa = {
       world: { p: 10000 },
     },
     use: {
+      spiritCost: 300,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;
@@ -299,6 +305,7 @@ export const WoodGongFa = {
       world: { p: 20000 },
     },
     use: {
+      spiritCost: 1200,
       onUse(event) {
         if (event.type !== "ItemUse") return;
         const lvl = event.proficiencyLevel;

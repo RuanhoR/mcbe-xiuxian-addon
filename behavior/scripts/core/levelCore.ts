@@ -21,6 +21,7 @@ export class LevelCore {
     tr: {
       arr: [],
     },
+    buff: {} as Record<string, number>,
   } as PlayerLevelDataType;
   private static _getRawData(player: Player) {
     const rawData = verifyPlayerLevelData(
@@ -89,6 +90,37 @@ export class LevelCore {
     this._updateWithRawData(player, rawData);
     return returnValue;
   }
+  public static useSpirit(player: Player, amount: number) {
+    if (!(amount > 0)) return true;
+    const rawData = this.getRawData(player);
+    if (rawData.spirit < amount) return false;
+    rawData.spirit -= amount;
+    this._updateWithRawData(player, rawData);
+    return true;
+  }
+  public static addSpirit(player: Player, value: number) {
+    const rawData = this.getRawData(player);
+    if (value <= 0) return rawData.spirit;
+    const max = getSpiritMax(rawData.lr, rawData.p);
+    rawData.spirit = Math.min(max, rawData.spirit + value);
+    this._updateWithRawData(player, rawData);
+    return rawData.spirit;
+  }
+  public static rerollSpiritualRoot(player: Player) {
+    const rawData = this.getRawData(player);
+    rawData.tr.arr = randomPlayerSpiritualRoot();
+    this._updateWithRawData(player, rawData);
+    return rawData.tr.arr;
+  }
+  public static getBuffs(player: Player) {
+    return this.getRawData(player).buff ?? {};
+  }
+  /** 批量写回丹药状态表（传空对象即清空） */
+  public static setBuffs(player: Player, buffs: Record<string, number>) {
+    const rawData = this.getRawData(player);
+    rawData.buff = buffs;
+    this._updateWithRawData(player, rawData);
+  }
   public static addLevel(player: Player, value: number) {
     const rawData = this.getRawData(player);
     const returnValue = (rawData.lr += value);
@@ -114,6 +146,14 @@ export class LevelCore {
   public static addNewGongFa(player: Player, id: GongFaType) {
     const rawData = this.getRawData(player);
     rawData.g[id] = GongFaEnum[id].proficiency.beginner.p;
+    this._updateWithRawData(player, rawData);
+    return true;
+  }
+  /** 弃功：移除功法及熟练度数据 */
+  public static removeGongFa(player: Player, id: GongFaType) {
+    const rawData = this.getRawData(player);
+    delete rawData.g[id];
+    this._updateWithRawData(player, rawData);
     return true;
   }
   public static listAllGongFa(player: Player) {
