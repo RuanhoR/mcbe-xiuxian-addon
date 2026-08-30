@@ -13,6 +13,14 @@
 - 修改 behavior/resources 下的 JSON/资源时，由后台 `pnpm dev` 自动重新构建到游戏，无需手动构建
 - 验证脚本改动 / 查看生成的物品等 JSON 产物时，直接跑 `pnpm build`（release 模式输出到 `./dist`），不要去翻游戏目录
 
+## 提交规范（必须遵守）
+
+- 提交信息格式：`<type>: <English summary>`，type 用 conventional commits 小写前缀：
+  - `wip:` — 未完成的阶段性提交
+  - `feat:` — 新功能；`fix:` — 修 bug；`refactor:` — 重构；`docs:` — 文档；`chore:` — 杂项
+- summary 一律**英文**，不用中文；一行写完，多个要点用 ` / ` 或 `, ` 分隔
+- 例：`wip: danyao type system (lore encoding, tier gate, persistent buff), gongfa event dispatch, putuan menu`
+
 ## 架构约定
 
 分层（改代码时保持职责不越界）：
