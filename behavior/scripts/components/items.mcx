@@ -43,7 +43,6 @@ import SpiritStoneLevel2Icon from "../assets/spirit_stone_level2.png"
 import SpiritStoneLevel3Icon from "../assets/spirit_stone_level3.png"
 import SpiritStoneLevel4Icon from "../assets/spirit_stone_level4.png"
 import PuTuanIcon from "../assets/putuan-place.png";
-import DanYaoIcon from "../assets/danyao.png";
 import GongFaIcon from "../assets/gongfa.png"
 import GongFaXideiIcon from "../assets/gongfa_xidei.png"
 import FormationPlateIcon from "../assets/formation_plate.png"

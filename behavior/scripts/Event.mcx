@@ -16,6 +16,7 @@ import {
   Player,
   PlayerInteractWithBlockAfterEvent,
   system,
+  VanillaEntityIdentifier,
   world,
 } from "@minecraft/server";
 import { processPlayerInTick } from "./core/tick";
@@ -26,9 +27,10 @@ import { placeZhenFa } from "./core/zhenFaRuntime";
 import { processZhenFaInTick } from "./core/zhenFaRuntime";
 import { getZhenFaIdFromItem } from "./utils/zhenfa";
 import { showPutuanMenu } from "./core/putuanMenu";
-import { AddonItem } from "./config";
+import { AddonEntity, AddonItem } from "./config";
 import { RUN_TICK } from "./config";
 import { onPlayerStatusChange } from "./command/resolve";
+import { getPositionInDirection } from "./utils/block";
 
 export function startLoop() {
   onPlayerStatusChange((status, player) => {
@@ -72,7 +74,14 @@ export function onHitEntity(event: EntityHitEntityAfterEvent) {
   }
 }
 export function onInteractBlock(event: PlayerInteractWithBlockAfterEvent) {
-  // 阵法优先：手持已铭刻阵盘轻触方块 → 布阵
+  if (event.beforeItemStack?.typeId == AddonItem.PuTuan) {
+    const loc = getPositionInDirection(event.block.location, event.blockFace);
+    try {
+      event.block.dimension.spawnEntity(AddonEntity.PuTuan as unknown as VanillaEntityIdentifier, loc)
+    } catch (e) {
+      console.error(`[SpawnPuTuan]: Cannot Spawn: Err: ${e}`)
+    }
+  }
   if (
     event.itemStack?.typeId === AddonItem.ZhenPan &&
     getZhenFaIdFromItem(event.itemStack)

@@ -5,10 +5,11 @@
 </Component>
 <script lang="ts">
 import { EntityComponent } from "@mbler/mcx-component";
+import { AddonEntity } from "../config";
 
-const ZhenFa = new EntityComponent({
+export const ZhenFa = new EntityComponent({
   format: "1.26.30",
-  id: "xian:zhenfa",
+  id: AddonEntity.ZhenFa,
   is_spawnable: false,
   is_summonable: true,
   is_experimental: false,
@@ -40,7 +41,4 @@ ZhenFa.setPhysics({
   has_collision: false
 });
 
-export {
-  ZhenFa
-}
 </script>
